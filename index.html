@@ -14,18 +14,11 @@
   <style>
     :root{
       --forest:#1A2F23;
-      --sand:#F5F2ED;
       --ink:#1A1A1A;
-      --muted: rgba(26,47,35,.55);
       --line: rgba(26,47,35,.14);
-      --gold:#C9A24F;
-      --copper:#B07A3A;
-
       --serif: "Fraunces", ui-serif, Georgia, serif;
       --sans: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-
       --max: 1120px;
-      --r: 18px;
       --r2: 26px;
     }
 
@@ -41,7 +34,6 @@
     a{ color:inherit; text-decoration:none; }
     .wrap{ max-width: var(--max); margin:0 auto; padding: 0 18px; }
 
-    /* Announcement */
     .announce{
       background: var(--forest);
       color: #fff;
@@ -52,7 +44,6 @@
       padding: 10px 12px;
     }
 
-    /* Header */
     .topbar{
       position: sticky; top:0; z-index:50;
       background: rgba(255,255,255,.92);
@@ -82,7 +73,6 @@
       font-size: 18px;
     }
 
-    /* Tabs (Barres / Packs) */
     .tabs{
       display:flex;
       gap: 22px;
@@ -104,7 +94,6 @@
       border-bottom-color: rgba(26,47,35,.92);
     }
 
-    /* Headline block */
     section{ padding: 26px 0 0; }
     .headline{
       position:relative;
@@ -137,13 +126,12 @@
     }
     .intro{
       margin-top: 10px;
-      max-width: 70ch;
+      max-width: 74ch;
       color: rgba(26,47,35,.6);
       font-size: 15px;
       line-height: 1.65;
     }
 
-    /* Product grid */
     .grid{
       display:grid;
       grid-template-columns: repeat(2, 1fr);
@@ -151,9 +139,8 @@
       margin-top: 18px;
       padding-bottom: 24px;
     }
-    @media (max-width: 920px){
-      .grid{ grid-template-columns: 1fr; }
-    }
+    @media (max-width: 920px){ .grid{ grid-template-columns: 1fr; } }
+
     .card{
       border: 1px solid var(--line);
       border-radius: var(--r2);
@@ -174,7 +161,9 @@
       object-fit: cover;
       border-radius: 18px;
       border: 1px solid rgba(26,47,35,.08);
+      background: #fff;
     }
+
     .cardBody{
       padding: 16px 18px 18px;
       border-top: 1px solid rgba(26,47,35,.08);
@@ -195,10 +184,6 @@
       background: rgba(26,47,35,.03);
       text-transform: uppercase;
     }
-    .badge.gold{
-      border-color: rgba(201,162,79,.35);
-      background: rgba(201,162,79,.10);
-    }
 
     .prodTitle{
       font-family: var(--serif);
@@ -214,10 +199,12 @@
     }
     .meta{
       margin-top: 10px;
-      color: rgba(26,47,35,.6);
+      color: rgba(26,47,35,.66);
       font-size: 13px;
-      line-height:1.45;
+      line-height:1.55;
     }
+    .meta strong{ color: rgba(26,47,35,.92); }
+
     .ctaRow{
       display:flex;
       gap: 10px;
@@ -241,7 +228,6 @@
     }
     .btn.primary:hover{ background:#14251c; }
 
-    /* Info slider (Avantages/Ingrédients/Utilisation) */
     .info{
       padding: 26px 0 34px;
       border-top: 1px solid var(--line);
@@ -269,6 +255,7 @@
       color: var(--forest);
       border-bottom-color: var(--forest);
     }
+
     .stage{
       display:grid;
       place-items:center;
@@ -283,31 +270,30 @@
       margin-top: 8px;
     }
     .stageText{
-      max-width: 72ch;
+      max-width: 78ch;
       color: rgba(26,47,35,.72);
       margin-top: 10px;
       line-height: 1.65;
     }
     .stageMiniGrid{
       margin-top: 14px;
-      width: min(920px, 100%);
+      width: min(980px, 100%);
       display:grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
       text-align:left;
     }
-    @media (max-width: 920px){
-      .stageMiniGrid{ grid-template-columns: 1fr; }
-    }
+    @media (max-width: 920px){ .stageMiniGrid{ grid-template-columns: 1fr; } }
     .miniCard{
       border: 1px solid rgba(26,47,35,.14);
       border-radius: 18px;
       padding: 14px;
       background: rgba(26,47,35,.02);
     }
-    .miniCard strong{ color: rgba(26,47,35,.92); }
+    .miniCard .t{ font-weight:900; color: rgba(26,47,35,.92); }
+    .miniCard .d{ margin-top:6px; color: rgba(26,47,35,.70); line-height:1.5; }
 
-    /* Packs page */
+    /* Packs + proof */
     .packsGrid{
       display:grid;
       grid-template-columns: repeat(2, 1fr);
@@ -315,11 +301,8 @@
       margin-top: 18px;
       padding-bottom: 28px;
     }
-    @media (max-width: 920px){
-      .packsGrid{ grid-template-columns: 1fr; }
-    }
+    @media (max-width: 920px){ .packsGrid{ grid-template-columns: 1fr; } }
 
-    /* Proof + match */
     .proof{
       border-top: 1px solid var(--line);
       padding: 26px 0 40px;
@@ -331,9 +314,7 @@
       gap: 10px;
       margin-top: 14px;
     }
-    @media (max-width: 920px){
-      .logos{ grid-template-columns: 1fr; }
-    }
+    @media (max-width: 920px){ .logos{ grid-template-columns: 1fr; } }
     .logoCard{
       border: 1px solid rgba(26,47,35,.14);
       border-radius: var(--r2);
@@ -351,9 +332,7 @@
       gap: 16px;
       margin-top: 16px;
     }
-    @media (max-width: 920px){
-      .twoCol{ grid-template-columns: 1fr; }
-    }
+    @media (max-width: 920px){ .twoCol{ grid-template-columns: 1fr; } }
     .box{
       border: 1px solid rgba(26,47,35,.14);
       border-radius: var(--r2);
@@ -409,7 +388,7 @@
 </head>
 
 <body>
-  <div class="announce">👉 +26g protéines • Zéro additif • Texture Cookie Dough • Packs 6 & 12 👉</div>
+  <div class="announce">👉 +26g protéines • Zéro additif • Satiété ~4h • QR suivi personnalisé 👉</div>
 
   <header class="topbar">
     <div class="wrap">
@@ -447,8 +426,8 @@
         <h1>Barres-repas.</h1>
         <div class="sub">Protéine noble. Énergie durable.</div>
         <p class="intro">
-          Trois recettes “cookie dough” construites sur un <strong>Master Mix</strong> commun (70%) pour garantir
-          une qualité constante. Objectif : texture moelleuse, goût premium, et efficacité micronutritionnelle.
+          Trois recettes “cookie dough” de <strong>100g</strong> : texture moelleuse, croquant maîtrisé,
+          et densité nutritionnelle. Sans parler d’“insecte” : on parle <strong>d’efficacité</strong>.
         </p>
       </div>
 
@@ -456,22 +435,26 @@
         <!-- Originale -->
         <article class="card">
           <div class="media">
-            <img src="originale.jpg" alt="PROTAMAX L'Originale Choco-Noisette — barre coupée texture cookie dough">
+            <img src="originale.png" alt="PROTAMAX L'Originale Choco-Noisette">
           </div>
           <div class="cardBody">
             <div class="badgeRow">
               <span class="badge">Repas protéiné.</span>
-              <span class="badge gold">Best-seller.</span>
+              <span class="badge">Gourmand.</span>
             </div>
             <h2 class="prodTitle">L’Originale. Choco-Noisette.</h2>
             <div class="price">25,80 €</div>
             <div class="meta">
-              Profil brownie / pâte à tartiner. Cacao + noisette pour une gourmandise nette.
-              <br><strong>Recette</strong> : Ténébrion 22% • Pois 15% • Sirop fibres 20% • Noisette 8% • Choco + cacao • Enrobage noir.
+              <strong>Ingrédients</strong> : farine de Ténébrion Molitor, isolat de pois, sirop de fibres (tapioca),
+              purée de noisette, pépites de chocolat noir, cacao en poudre, crisps de pois, glycérine végétale,
+              enrobage chocolat noir, arôme vanille, sel.
+              <br><br>
+              <strong>Avantages</strong> : cacao + enrobage noir pour une sensation “dessert”, noisette pour les lipides
+              naturellement satiétogènes, fibres + texture cookie dough pour tenir sur la durée.
             </div>
             <div class="ctaRow">
               <button class="btn primary" onclick="goPacks('decouverte')">Commander</button>
-              <button class="btn" onclick="jump('#info')">Avantages</button>
+              <button class="btn" onclick="setInfo('a'); jump('#info')">Avantages</button>
             </div>
           </div>
         </article>
@@ -479,7 +462,7 @@
         <!-- Salty Peanut -->
         <article class="card">
           <div class="media">
-            <img src="saltypeanut.jpg" alt="PROTAMAX Salty Peanut Caramel salé — barre coupée texture cookie dough">
+            <img src="saltypeanut.png" alt="PROTAMAX Salty Peanut Caramel salé">
           </div>
           <div class="cardBody">
             <div class="badgeRow">
@@ -489,8 +472,12 @@
             <h2 class="prodTitle">Salty Peanut. Caramel salé.</h2>
             <div class="price">25,80 €</div>
             <div class="meta">
-              Profil “snack de récupération” : beurre de cacahuète + pointe de sel.
-              <br><strong>Recette</strong> : Ténébrion 22% • Pois 16% • Sirop fibres 21% • Beurre cacahuète 12% • éclats 8% • Enrobage lait.
+              <strong>Ingrédients</strong> : farine de Ténébrion Molitor, isolat de pois, sirop de fibres,
+              beurre de cacahuète, éclats de cacahuète, crisps de pois, glycérine végétale,
+              enrobage chocolat au lait, arôme caramel, sel.
+              <br><br>
+              <strong>Avantages</strong> : profil “post-effort” — protéines + lipides de la cacahuète pour une énergie stable,
+              sel pour le goût et la rétention hydrique après entraînement, texture dense qui cale.
             </div>
             <div class="ctaRow">
               <button class="btn primary" onclick="goPacks('decouverte')">Commander</button>
@@ -502,18 +489,22 @@
         <!-- Red Berry -->
         <article class="card">
           <div class="media">
-            <img src="redberry.jpg" alt="PROTAMAX Red Berry Amande Fruits rouges — barre coupée texture cookie dough">
+            <img src="redberry.png" alt="PROTAMAX Red Berry Amande Fruits rouges">
           </div>
           <div class="cardBody">
             <div class="badgeRow">
               <span class="badge">Wellness.</span>
-              <span class="badge">Light.</span>
+              <span class="badge">Frais.</span>
             </div>
             <h2 class="prodTitle">Red Berry. Amande. Fruits rouges.</h2>
             <div class="price">25,80 €</div>
             <div class="meta">
-              Profil “fraîcheur” : amande blanche + cranberries acidulées.
-              <br><strong>Recette</strong> : Ténébrion 22% • Pois 15% • Sirop fibres 20% • Purée amande 10% • cranberries 10% • choco blanc 8% (ou filet).
+              <strong>Ingrédients</strong> : farine de Ténébrion Molitor, isolat de pois, sirop de fibres,
+              purée d’amande blanche, cranberries / fraises, amandes hachées, crisps de pois,
+              glycérine végétale, chocolat blanc (enrobage ou filet), arôme fruit rouge.
+              <br><br>
+              <strong>Avantages</strong> : amande blanche pour une douceur “clean”, fruits rouges pour l’acidité et le contraste,
+              fibres pour la satiété, option parfaite quand tu veux léger mais efficace.
             </div>
             <div class="ctaRow">
               <button class="btn primary" onclick="goPacks('decouverte')">Commander</button>
@@ -522,19 +513,19 @@
           </div>
         </article>
 
-        <!-- Packs shortcut -->
+        <!-- Packs -->
         <article class="card">
-          <div class="media" style="min-height:260px;">
-            <img src="originale.jpg" alt="PROTAMAX packs" style="filter:saturate(.9) contrast(1.02);">
+          <div class="media">
+            <img src="originale.png" alt="PROTAMAX Packs">
           </div>
           <div class="cardBody">
             <div class="badgeRow">
-              <span class="badge gold">Packs.</span>
-              <span class="badge">QR Suivi.</span>
+              <span class="badge">Packs.</span>
+              <span class="badge">QR suivi.</span>
             </div>
             <h2 class="prodTitle">Deux packs. Un protocole.</h2>
             <div class="meta">
-              Chaque barre contient un QR code : programme de suivi personnalisé (routine, recommandations, 30 jours).
+              Chaque barre contient un QR code : accès à un programme de suivi personnalisé (routine, recommandations, suivi 30 jours).
             </div>
             <div class="ctaRow">
               <button class="btn primary" onclick="goPacks('performance')">Voir packs</button>
@@ -553,12 +544,8 @@
         </div>
 
         <div class="stage">
-          <div class="stageTitle" id="stageTitle">Densité micronutritionnelle.</div>
-          <div class="stageText" id="stageText">
-            Fer, B12, magnésium : un avantage rare face aux barres “whey” souvent supplémentées chimiquement.
-            Satiété ~4h grâce aux fibres et à l’architecture cookie dough.
-          </div>
-
+          <div class="stageTitle" id="stageTitle">Satiété & énergie stable.</div>
+          <div class="stageText" id="stageText"></div>
           <div class="stageMiniGrid" id="stageMiniGrid"></div>
         </div>
       </section>
@@ -571,15 +558,14 @@
         <h1>Packs.</h1>
         <div class="sub">Économiques et pratiques.</div>
         <p class="intro">
-          Pack Découverte pour tester. Pack Performance pour tenir la routine. Les recettes sont construites sur le
-          <strong>Master Mix</strong> (70%) : Ténébrion + pois, sirop de fibres, glycérine végétale, crisps de pois.
+          Pack Découverte pour tester. Pack Performance pour tenir la routine. Chaque barre = 100g, texture cookie dough, zéro additif.
         </p>
       </div>
 
       <div class="packsGrid">
         <article class="card">
           <div class="media">
-            <img src="originale.jpg" alt="Pack Découverte PROTAMAX">
+            <img src="originale.png" alt="Pack Découverte PROTAMAX">
           </div>
           <div class="cardBody">
             <div class="badgeRow">
@@ -597,11 +583,11 @@
 
         <article class="card">
           <div class="media">
-            <img src="saltypeanut.jpg" alt="Pack Performance PROTAMAX">
+            <img src="saltypeanut.png" alt="Pack Performance PROTAMAX">
           </div>
           <div class="cardBody">
             <div class="badgeRow">
-              <span class="badge gold">Best-value.</span>
+              <span class="badge">Pack.</span>
               <span class="badge">Livraison offerte.</span>
             </div>
             <h2 class="prodTitle">Pack Performance (12 barres).</h2>
@@ -617,8 +603,7 @@
       <section class="proof">
         <h2 style="font-family:var(--serif); font-size: 38px; margin:0;">Preuves.</h2>
         <p class="intro" style="margin-top:10px;">
-          Développé avec des experts en nutrition médicale pour aider à combler des carences fréquentes en
-          <strong>Fer</strong> et <strong>B12</strong>.
+          Développé avec des experts en nutrition médicale pour aider à combler des carences fréquentes en <strong>Fer</strong> et <strong>B12</strong>.
         </p>
 
         <div class="logos">
@@ -631,8 +616,7 @@
           <div class="box">
             <h3 style="margin:0 0 8px; font-family:var(--serif);">QR Code.</h3>
             <p style="margin:0; color: rgba(26,47,35,.72); line-height:1.65;">
-              Chaque barre contient un QR code → programme de suivi personnalisé : routine, recommandations,
-              tableau micronutritionnel, suivi 30 jours.
+              Chaque barre contient un QR code → programme de suivi personnalisé : routine, recommandations, tableau micronutritionnel, suivi 30 jours.
             </p>
           </div>
           <div class="tiktok">
@@ -655,31 +639,11 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td><strong>Protéines</strong></td>
-                <td class="good">26g nobles</td>
-                <td class="bad">15–20g</td>
-              </tr>
-              <tr>
-                <td><strong>B12</strong></td>
-                <td class="good">Présente (naturelle)</td>
-                <td class="bad">Rare / ajout</td>
-              </tr>
-              <tr>
-                <td><strong>Fer</strong></td>
-                <td class="good">Densité micronutritionnelle</td>
-                <td class="bad">Faible</td>
-              </tr>
-              <tr>
-                <td><strong>Additifs</strong></td>
-                <td class="good">Zéro</td>
-                <td class="bad"><span class="strike">Sucralose</span>, maltitol, gélatine…</td>
-              </tr>
-              <tr>
-                <td><strong>Digestion</strong></td>
-                <td class="good">Fibres élevées</td>
-                <td class="bad">Ballonnements</td>
-              </tr>
+              <tr><td><strong>Protéines</strong></td><td class="good">26g nobles</td><td class="bad">15–20g</td></tr>
+              <tr><td><strong>B12</strong></td><td class="good">Présente (naturelle)</td><td class="bad">Rare / ajout</td></tr>
+              <tr><td><strong>Fer</strong></td><td class="good">Densité micronutritionnelle</td><td class="bad">Faible</td></tr>
+              <tr><td><strong>Additifs</strong></td><td class="good">Zéro</td><td class="bad"><span class="strike">Sucralose</span>, maltitol, gélatine…</td></tr>
+              <tr><td><strong>Confort</strong></td><td class="good">Fibres & texture maîtrisée</td><td class="bad">Ballonnements</td></tr>
             </tbody>
           </table>
         </div>
@@ -688,15 +652,13 @@
 
     <footer>
       © <span id="year"></span> PROTAMAX — Masstige • minimalisme radical • efficacité durable.
-      <br>Note : valeurs micronutritionnelles à confirmer par analyses & étiquetage UE.
     </footer>
   </main>
 
   <script>
-    // Year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Tabs: Barres / Packs
+    // Tabs
     const tabs = [...document.querySelectorAll(".tab")];
     const pageBars = document.getElementById("page-bars");
     const pagePacks = document.getElementById("page-packs");
@@ -704,38 +666,25 @@
     tabs.forEach(t => t.addEventListener("click", () => {
       tabs.forEach(x => x.classList.remove("active"));
       t.classList.add("active");
-
       const page = t.dataset.page;
-      if(page === "bars"){
-        pageBars.style.display = "";
-        pagePacks.style.display = "none";
-        window.scrollTo({top:0, behavior:"smooth"});
-      } else {
-        pageBars.style.display = "none";
-        pagePacks.style.display = "";
-        window.scrollTo({top:0, behavior:"smooth"});
-      }
+      if(page === "bars"){ pageBars.style.display=""; pagePacks.style.display="none"; window.scrollTo({top:0,behavior:"smooth"}); }
+      else { pageBars.style.display="none"; pagePacks.style.display=""; window.scrollTo({top:0,behavior:"smooth"}); }
     }));
 
-    function jump(sel){
-      const el = document.querySelector(sel);
-      if(el) el.scrollIntoView({behavior:"smooth", block:"start"});
-    }
+    function jump(sel){ const el = document.querySelector(sel); if(el) el.scrollIntoView({behavior:"smooth"}); }
     window.jump = jump;
 
     function goPacks(which){
       tabs.forEach(x => x.classList.remove("active"));
       document.querySelector('.tab[data-page="packs"]').classList.add("active");
-      pageBars.style.display = "none";
-      pagePacks.style.display = "";
-      window.scrollTo({top:0, behavior:"smooth"});
-      if(which === "performance"){
-        setTimeout(()=> alert("Pack Performance (démo). En prod : Shopify/Stripe."), 350);
-      }
+      pageBars.style.display="none";
+      pagePacks.style.display="";
+      window.scrollTo({top:0,behavior:"smooth"});
+      if(which==="performance"){ setTimeout(()=>alert("Pack Performance (démo)."), 300); }
     }
     window.goPacks = goPacks;
 
-    // Info slider content
+    // Slider content: avantages / ingrédients / utilisation (spécifique)
     const infoTabs = [...document.querySelectorAll(".infoTab")];
     const stageTitle = document.getElementById("stageTitle");
     const stageText  = document.getElementById("stageText");
@@ -743,30 +692,30 @@
 
     const CONTENT = {
       a: {
-        title: "Densité micronutritionnelle.",
-        text: "Pourquoi PROTAMAX plutôt qu’une barre whey standard ? Parce que le Ténébrion + le pois apportent des minéraux naturellement. Et une satiété ~4h grâce aux fibres.",
+        title: "Satiété & énergie stable.",
+        text: "Les trois recettes sont pensées pour tenir : protéines + fibres + texture cookie dough. Résultat : moins de pic, plus de stabilité.",
         minis: [
-          ["Fer ~5,5 mg", "≈39% AJR • “Anti-fatigue”"],
-          ["Magnésium ~120 mg", "≈32% AJR • récupération musculaire"],
-          ["Vit. B12 ~0,6 µg", "≈24% AJR • énergie naturelle"]
+          ["L’Originale", "Cacao + noisette : sensation “dessert”, satiété nette."],
+          ["Salty Peanut", "Cacahuète + sel : profil post-effort, dense et stable."],
+          ["Red Berry", "Amande + fruits rouges : contraste frais, léger mais efficace."]
         ]
       },
       b: {
-        title: "Master Mix (70%).",
-        text: "Base commune pour optimiser la production et garder une texture cookie dough premium : mix protéines (Ténébrion + pois), liants moelleux, crisps de pois pour le croquant.",
+        title: "Ingrédients par recette.",
+        text: "Chaque barre a sa signature. Pas de listes interminables : une composition courte, lisible, et cohérente.",
         minis: [
-          ["Protéines", "Ténébrion (premium) + pois (structure/coût)"],
-          ["Liants", "Sirop de fibres (tapioca/maïs) + glycérine végétale"],
-          ["Texture", "Crisps de pois : crunch sans coût élevé"]
+          ["L’Originale", "Ténébrion • pois • fibres tapioca • noisette • choco • cacao • crisps • glycérine • enrobage noir."],
+          ["Salty Peanut", "Ténébrion • pois • fibres • beurre & éclats de cacahuète • crisps • glycérine • enrobage lait • caramel • sel."],
+          ["Red Berry", "Ténébrion • pois • fibres • purée d’amande • cranberries/fraises • amandes • crisps • glycérine • choco blanc • arôme fruit rouge."]
         ]
       },
       c: {
         title: "Utilisation.",
-        text: "Post-workout intense, déjeuner d’affaires nomade, bio-hacking de performance. Une barre = un repas portable, stable.",
+        text: "Post-workout intense, déjeuner nomade, performance. Une barre = un repas portable. Et le QR code te donne le suivi.",
         minis: [
-          ["Post-workout", "récupération + énergie stable"],
-          ["Nomade", "réunion, train, avion — propre"],
-          ["Routine", "QR code → suivi personnalisé"]
+          ["Post-workout", "Salty Peanut : récupération + énergie stable."],
+          ["Déjeuner nomade", "L’Originale : gourmand, propre, rassasiant."],
+          ["Wellness", "Red Berry : frais, léger, routine clean."]
         ]
       }
     };
@@ -775,17 +724,12 @@
       infoTabs.forEach(t => t.classList.toggle("active", t.dataset.info === key));
       stageTitle.textContent = CONTENT[key].title;
       stageText.textContent  = CONTENT[key].text;
-
-      miniGrid.innerHTML = CONTENT[key].minis.map(([t, d]) => `
-        <div class="miniCard">
-          <div style="font-weight:900; color: rgba(26,47,35,.92);">${t}</div>
-          <div style="margin-top:6px; color: rgba(26,47,35,.70); line-height:1.5;">${d}</div>
-        </div>
-      `).join("");
+      miniGrid.innerHTML = CONTENT[key].minis.map(([t,d]) =>
+        `<div class="miniCard"><div class="t">${t}</div><div class="d">${d}</div></div>`
+      ).join("");
     }
-
     infoTabs.forEach(t => t.addEventListener("click", () => setInfo(t.dataset.info)));
-    setInfo("a"); // default
+    setInfo("a");
     window.setInfo = setInfo;
   </script>
 </body>
