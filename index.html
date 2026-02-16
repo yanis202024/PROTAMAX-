@@ -1,16 +1,14 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>PROTAMAX — Barres repas 100g | Protéine Entomologique Noble</title>
-  <meta name="description" content="PROTAMAX : la révolution nutritionnelle de 100g. +26g de protéines, zéro additif, énergie durable, texture gastronomique. Packs Découverte & Performance."/>
+  <title>PROTAMAX — Barres repas 100g | DTC Luxury Food</title>
+  <meta name="description" content="PROTAMAX : barres repas 100g à protéine entomologique noble. +26g protéines, zéro additif, énergie stable. Packs Découverte & Performance."/>
   <meta name="theme-color" content="#1A2F23"/>
 
-  <!-- Fonts (system-safe default + optional Google Fonts) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Serif for headings + Sans for body -->
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
@@ -20,709 +18,512 @@
       --matte:#1A1A1A;
       --copper:#B07A3A;
       --gold:#C9A24F;
+
       --line: rgba(26,47,35,.14);
-      --shadow: 0 16px 40px rgba(0,0,0,.08);
-      --radius: 20px;
-      --radius2: 28px;
+      --shadow: 0 18px 55px rgba(0,0,0,.10);
+      --radius: 22px;
+      --radius2: 30px;
 
       --serif: "Fraunces", ui-serif, Georgia, serif;
       --sans: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-
       --max: 1140px;
     }
 
     *{ box-sizing:border-box; }
-    html,body{ height:100%; }
     body{
       margin:0;
       font-family:var(--sans);
-      color:var(--matte);
       background: var(--sand);
-      letter-spacing: .1px;
+      color: var(--matte);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
-
     a{ color:inherit; text-decoration:none; }
-    button{ font-family:inherit; }
+    .wrap{ max-width: var(--max); margin:0 auto; padding: 0 18px; }
 
-    /* Layout */
-    .wrap{ max-width: var(--max); margin:0 auto; padding: 0 20px; }
-    .grid{ display:grid; gap:20px; }
-    .row{ display:flex; gap:16px; flex-wrap:wrap; align-items:center; }
-    .spacer{ height: 22px; }
-
-    /* Top bar */
+    /* Header */
     .topbar{
       position:sticky; top:0; z-index:50;
-      background: rgba(245,242,237,.72);
-      backdrop-filter: blur(10px);
+      background: rgba(245,242,237,.82);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--line);
     }
     .topbar .inner{
       display:flex; align-items:center; justify-content:space-between;
       padding: 14px 0;
+      gap: 14px;
     }
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      letter-spacing:.6px;
-    }
-    .logoMark{
+    .brand{ display:flex; align-items:center; gap:12px; }
+    .mark{
       width:34px; height:34px; border-radius: 12px;
-      background: radial-gradient(120% 120% at 20% 20%, rgba(201,162,79,.55), rgba(26,47,35,.9));
+      background: radial-gradient(120% 120% at 20% 20%, rgba(201,162,79,.55), rgba(26,47,35,.92));
       border: 1px solid rgba(201,162,79,.35);
-      box-shadow: 0 10px 24px rgba(26,47,35,.18);
+      box-shadow: 0 12px 28px rgba(26,47,35,.18);
     }
     .brandName{
-      font-weight:600;
+      font-weight:700;
+      letter-spacing:.6px;
       font-size: 14px;
       text-transform: uppercase;
+      color: rgba(26,47,35,.95);
     }
-    .nav{
-      display:flex; gap:14px; align-items:center;
+    .nav{ display:flex; align-items:center; gap: 10px; flex-wrap:wrap; }
+    .nav a{
       font-size: 13px;
-      color: rgba(26,47,35,.86);
+      color: rgba(26,47,35,.82);
+      padding: 8px 10px;
+      border-radius: 999px;
     }
-    .nav a{ padding:8px 10px; border-radius: 999px; }
     .nav a:hover{ background: rgba(26,47,35,.06); }
 
     /* Buttons */
     .btn{
-      border: 1px solid rgba(26,47,35,.24);
-      background: transparent;
-      padding: 12px 16px;
+      border: 1px solid rgba(26,47,35,.22);
+      background: rgba(245,242,237,.85);
+      padding: 12px 14px;
       border-radius: 999px;
-      font-weight: 600;
-      letter-spacing:.2px;
+      font-weight: 700;
+      font-size: 13px;
       cursor:pointer;
       transition: transform .12s ease, background .12s ease, border-color .12s ease;
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:10px;
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
       user-select:none;
     }
-    .btn:hover{ transform: translateY(-1px); background: rgba(26,47,35,.06); border-color: rgba(26,47,35,.34); }
-    .btn:active{ transform: translateY(0px); }
-
+    .btn:hover{ transform: translateY(-1px); background: rgba(26,47,35,.06); border-color: rgba(26,47,35,.32); }
+    .btn:active{ transform: translateY(0); }
     .btn-primary{
       background: var(--forest);
       color: var(--sand);
-      border-color: rgba(26,47,35,.75);
-      box-shadow: 0 16px 30px rgba(26,47,35,.18);
+      border-color: #14251c;
+      box-shadow: 0 18px 34px rgba(26,47,35,.18);
     }
-    .btn-primary:hover{ background: #14251c; border-color: #14251c; }
-    .btn-ghost{
-      border-color: rgba(26,47,35,.18);
-      background: rgba(245,242,237,.6);
-    }
+    .btn-primary:hover{ background:#14251c; }
 
-    .badge{
+    .pill{
       display:inline-flex; align-items:center; gap:8px;
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(176,122,58,.10);
-      border: 1px solid rgba(176,122,58,.28);
-      color: rgba(26,47,35,.92);
+      border: 1px solid rgba(26,47,35,.14);
+      background: rgba(245,242,237,.75);
+      color: rgba(26,47,35,.80);
       font-size: 12px;
       font-weight:600;
     }
-    .badge .dot{
+    .pill .dot{
       width:8px; height:8px; border-radius:999px;
       background: linear-gradient(180deg, var(--gold), var(--copper));
-      box-shadow: 0 8px 18px rgba(201,162,79,.25);
+      box-shadow: 0 8px 18px rgba(201,162,79,.22);
     }
 
-    /* Typography */
+    /* Type */
     h1,h2,h3{ font-family: var(--serif); margin:0; }
-    h1{
-      font-size: clamp(34px, 4vw, 56px);
-      line-height: 1.05;
-      letter-spacing: .2px;
-    }
-    h2{
-      font-size: clamp(26px, 3.2vw, 38px);
-      line-height: 1.1;
-    }
-    h3{
-      font-size: 18px;
-      line-height: 1.2;
-    }
-    p{ margin:0; line-height: 1.55; color: rgba(26,47,35,.86); }
+    h1{ font-size: clamp(34px, 4.2vw, 58px); line-height: 1.04; }
+    h2{ font-size: clamp(24px, 3.2vw, 40px); line-height: 1.1; }
+    h3{ font-size: 18px; line-height: 1.2; }
+    p{ margin:0; line-height: 1.6; color: rgba(26,47,35,.86); }
     .muted{ color: rgba(26,47,35,.72); }
-    .small{ font-size: 13px; }
-    .kpi{
-      font-weight:700;
-      color: var(--forest);
-    }
+    .kpi{ color: var(--forest); font-weight:800; }
 
     /* Sections */
-    section{ padding: 72px 0; }
-    .hero{ padding: 44px 0 70px; }
+    section{ padding: 70px 0; }
     .card{
-      background: rgba(245,242,237,.72);
+      background: rgba(245,242,237,.78);
       border: 1px solid var(--line);
       border-radius: var(--radius2);
       box-shadow: var(--shadow);
     }
-    .card.pad{ padding: 22px; }
-    .surface{
-      background: rgba(245,242,237,.55);
-      border: 1px solid var(--line);
-      border-radius: var(--radius2);
-    }
 
-    /* Hero layout */
+    /* Hero */
+    .hero{ padding: 34px 0 56px; }
     .heroGrid{
       display:grid;
       grid-template-columns: 1.1fr .9fr;
-      gap: 26px;
+      gap: 22px;
       align-items:stretch;
     }
-    @media (max-width: 920px){
+    @media (max-width: 980px){
       .heroGrid{ grid-template-columns: 1fr; }
     }
-
     .heroMedia{
       position:relative;
       overflow:hidden;
-      min-height: 420px;
       border-radius: var(--radius2);
+      min-height: 420px;
+      border: 1px solid var(--line);
       background:
         radial-gradient(120% 90% at 20% 10%, rgba(201,162,79,.18), transparent 52%),
         radial-gradient(120% 90% at 90% 90%, rgba(26,47,35,.18), transparent 58%),
         linear-gradient(180deg, rgba(26,47,35,.08), rgba(26,47,35,.02));
-      border: 1px solid var(--line);
     }
     .heroMedia img{
       width:100%; height:100%;
-      object-fit: cover;
-      display:block;
-      filter: contrast(1.04) saturate(1.02);
-      opacity:.95;
+      object-fit:cover; display:block;
+      filter: contrast(1.05) saturate(1.02);
     }
     .heroMedia .overlay{
       position:absolute; inset:0;
       background:
-        linear-gradient(90deg, rgba(245,242,237,.35), rgba(245,242,237,0) 45%),
-        linear-gradient(180deg, rgba(245,242,237,0) 55%, rgba(245,242,237,.58));
+        linear-gradient(90deg, rgba(245,242,237,.42), rgba(245,242,237,0) 48%),
+        linear-gradient(180deg, rgba(245,242,237,0) 55%, rgba(245,242,237,.62));
       pointer-events:none;
     }
-    .heroCopy{
-      display:flex; flex-direction:column; gap:16px;
+
+    .heroBox{
+      display:grid; gap: 14px;
       padding: 6px 2px;
+      align-content:start;
     }
-    .heroActions{ display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
-    .heroMeta{
-      display:flex; gap:12px; flex-wrap:wrap;
-      margin-top: 6px;
-    }
-    .metaPill{
-      padding: 9px 12px;
-      border-radius: 999px;
-      border:1px solid rgba(26,47,35,.16);
-      background: rgba(245,242,237,.7);
-      font-size: 12px;
-      color: rgba(26,47,35,.78);
-    }
-
-    /* OKR trilogy */
-    .okrGrid{
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 20px;
-    }
-    @media (max-width: 920px){
-      .okrGrid{ grid-template-columns: 1fr; }
-    }
-    .okr{
-      position:relative;
-      padding: 22px;
-      border-radius: var(--radius2);
-      border:1px solid var(--line);
-      background: rgba(245,242,237,.72);
-      transition: transform .14s ease, border-color .14s ease, background .14s ease;
-      cursor:pointer;
-      min-height: 220px;
-      overflow:hidden;
-    }
-    .okr:hover{
-      transform: translateY(-2px);
-      border-color: rgba(26,47,35,.28);
-      background: rgba(245,242,237,.88);
-    }
-    .okr.active{
-      border-color: rgba(176,122,58,.55);
-      box-shadow: 0 18px 46px rgba(176,122,58,.10);
-    }
-    .okrTop{
-      display:flex; align-items:center; justify-content:space-between;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-    .icon{
-      width: 44px; height: 44px;
-      border-radius: 16px;
-      background: rgba(26,47,35,.06);
-      border: 1px solid rgba(26,47,35,.12);
-      display:grid; place-items:center;
-    }
-    .icon svg{ width:22px; height:22px; stroke: rgba(26,47,35,.9); }
-    .okrTitle{
-      font-family: var(--serif);
-      font-weight:600;
-      font-size: 18px;
-    }
-    .okrBody{ display:grid; gap:10px; }
-    .list{
-      margin:0; padding-left: 18px;
-      color: rgba(26,47,35,.86);
-      line-height: 1.55;
-    }
-    .list li{ margin: 6px 0; }
-    .okrFoot{
-      position:absolute; left:22px; right:22px; bottom:18px;
-      display:flex; align-items:center; justify-content:space-between;
-      gap: 10px;
-      font-size: 12px;
-      color: rgba(26,47,35,.72);
-      border-top: 1px solid rgba(26,47,35,.10);
-      padding-top: 12px;
-      background: linear-gradient(180deg, transparent, rgba(245,242,237,.75));
-    }
-
-    /* Product grid */
-    .productGrid{
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 18px;
-    }
-    @media (max-width: 920px){
-      .productGrid{ grid-template-columns: 1fr; }
-    }
-    .product{
-      overflow:hidden;
-      border-radius: var(--radius2);
-      border:1px solid var(--line);
-      background: rgba(245,242,237,.72);
-      transition: transform .14s ease, border-color .14s ease;
-    }
-    .product:hover{ transform: translateY(-2px); border-color: rgba(26,47,35,.28); }
-    .productMedia{
-      height: 220px;
-      background:
-        radial-gradient(120% 90% at 15% 10%, rgba(201,162,79,.18), transparent 52%),
-        radial-gradient(120% 90% at 90% 90%, rgba(26,47,35,.16), transparent 58%),
-        linear-gradient(180deg, rgba(26,47,35,.06), rgba(26,47,35,.02));
-      border-bottom: 1px solid rgba(26,47,35,.10);
-      position:relative;
-    }
-    .productMedia img{ width:100%; height:100%; object-fit:cover; display:block; }
-    .productBody{ padding: 18px 20px 20px; display:grid; gap: 10px; }
-    .tagRow{ display:flex; gap:8px; flex-wrap:wrap; }
-
-    /* Proof */
-    .logoRow{
+    .heroActions{ display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:6px; }
+    .trustRow{ display:grid; gap:10px; margin-top: 10px; }
+    .trustGrid{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
+      gap: 10px;
+    }
+    @media (max-width: 520px){
+      .trustGrid{ grid-template-columns: 1fr; }
+    }
+    .trust{
+      padding: 12px 12px;
+      border-radius: 18px;
+      border: 1px solid rgba(26,47,35,.12);
+      background: rgba(245,242,237,.72);
+      font-size: 12px;
+      color: rgba(26,47,35,.80);
+    }
+
+    /* Buy Card */
+    .buyCard{ padding: 18px; }
+    .select{
+      display:grid; gap: 10px;
+      margin-top: 8px;
+    }
+    .opt{
+      padding: 14px 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(26,47,35,.14);
+      background: rgba(245,242,237,.75);
+      display:flex; align-items:flex-start; justify-content:space-between; gap: 10px;
+      cursor:pointer;
+      transition: border-color .12s ease, transform .12s ease;
+    }
+    .opt:hover{ transform: translateY(-1px); border-color: rgba(26,47,35,.28); }
+    .opt.active{ border-color: rgba(201,162,79,.52); box-shadow: 0 18px 42px rgba(201,162,79,.10); }
+    .opt .left{ display:grid; gap: 4px; }
+    .opt .title{ font-weight:800; color: rgba(26,47,35,.92); }
+    .opt .sub{ font-size: 12px; color: rgba(26,47,35,.74); line-height: 1.35; }
+    .opt .price{
+      font-family: var(--serif);
+      font-weight: 700;
+      color: var(--forest);
+      white-space:nowrap;
+    }
+    .mini{ font-size: 12px; color: rgba(26,47,35,.72); }
+
+    /* OKR */
+    .okrGrid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
       margin-top: 16px;
     }
-    @media (max-width: 920px){
-      .logoRow{ grid-template-columns: 1fr; }
-    }
-    .logoCard{
-      padding: 18px;
+    @media (max-width: 980px){ .okrGrid{ grid-template-columns: 1fr; } }
+    .okr{
+      padding: 20px;
       border-radius: var(--radius2);
-      border:1px solid rgba(26,47,35,.14);
-      background: rgba(245,242,237,.72);
-      display:flex; align-items:center; justify-content:center;
-      font-weight:700;
+      border: 1px solid var(--line);
+      background: rgba(245,242,237,.78);
+    }
+    .okrTop{ display:flex; align-items:center; justify-content:space-between; gap: 10px; margin-bottom: 10px; }
+    .icon{
+      width: 42px; height: 42px; border-radius: 16px;
+      border: 1px solid rgba(26,47,35,.12);
+      background: rgba(26,47,35,.06);
+      display:grid; place-items:center;
+    }
+    .icon svg{ width:22px; height:22px; stroke: rgba(26,47,35,.92); fill:none; }
+    ul{ margin: 0; padding-left: 18px; color: rgba(26,47,35,.86); line-height: 1.6; }
+    li{ margin: 6px 0; }
+
+    /* Signatures */
+    .prodGrid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+    }
+    @media (max-width: 980px){ .prodGrid{ grid-template-columns: 1fr; } }
+    .prod{
+      border-radius: var(--radius2);
+      border: 1px solid var(--line);
+      overflow:hidden;
+      background: rgba(245,242,237,.78);
+      transition: transform .12s ease, border-color .12s ease;
+    }
+    .prod:hover{ transform: translateY(-2px); border-color: rgba(26,47,35,.28); }
+    .prodMedia{ height: 210px; background: rgba(26,47,35,.05); border-bottom: 1px solid rgba(26,47,35,.10); }
+    .prodMedia img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .prodBody{ padding: 16px 18px 18px; display:grid; gap: 10px; }
+
+    /* Proof + FAQ */
+    .logos{
+      display:grid; grid-template-columns: repeat(3, 1fr);
+      gap: 10px; margin-top: 14px;
+    }
+    @media (max-width: 980px){ .logos{ grid-template-columns: 1fr; } }
+    .logo{
+      padding: 16px;
+      border-radius: var(--radius2);
+      border: 1px solid rgba(26,47,35,.14);
+      background: rgba(245,242,237,.78);
+      font-weight: 800;
+      text-transform: uppercase;
       letter-spacing: .3px;
       color: rgba(26,47,35,.84);
-      text-transform: uppercase;
-      min-height: 64px;
-    }
-
-    /* TikTok placeholder */
-    .tiktok{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 18px;
-      margin-top: 18px;
-      align-items:stretch;
-    }
-    @media (max-width: 920px){
-      .tiktok{ grid-template-columns: 1fr; }
-    }
-    .tiktokWidget{
-      border-radius: var(--radius2);
-      border:1px dashed rgba(26,47,35,.28);
-      background: rgba(245,242,237,.6);
-      min-height: 260px;
-      display:grid; place-items:center;
-      padding: 18px;
       text-align:center;
-      color: rgba(26,47,35,.75);
     }
 
-    /* Comparison table */
+    .twoCol{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 16px;
+      align-items:start;
+    }
+    @media (max-width: 980px){ .twoCol{ grid-template-columns: 1fr; } }
+    .box{ padding: 18px; border-radius: var(--radius2); border: 1px solid var(--line); background: rgba(245,242,237,.78); }
+
+    .faq{ display:grid; gap: 10px; margin-top: 10px; }
+    details{
+      border: 1px solid rgba(26,47,35,.14);
+      background: rgba(245,242,237,.78);
+      border-radius: 18px;
+      padding: 12px 14px;
+    }
+    summary{
+      cursor:pointer;
+      font-weight: 800;
+      color: rgba(26,47,35,.92);
+    }
+    details p{ margin-top: 8px; }
+
+    /* Comparison */
     table{
       width:100%;
       border-collapse: separate;
       border-spacing:0;
       overflow:hidden;
       border-radius: var(--radius2);
-      border:1px solid var(--line);
-      background: rgba(245,242,237,.72);
+      border: 1px solid var(--line);
+      background: rgba(245,242,237,.78);
       box-shadow: var(--shadow);
-      margin-top: 18px;
+      margin-top: 16px;
     }
     th, td{
-      padding: 14px 16px;
+      padding: 14px 14px;
       border-bottom: 1px solid rgba(26,47,35,.10);
       vertical-align: top;
     }
     th{
       text-align:left;
       font-size: 12px;
-      letter-spacing:.5px;
       text-transform: uppercase;
+      letter-spacing: .5px;
       color: rgba(26,47,35,.78);
       background: rgba(26,47,35,.04);
     }
     tr:last-child td{ border-bottom:none; }
-    .good{ color: var(--forest); font-weight:600; }
+    .good{ font-weight:800; color: var(--forest); }
     .bad{ color: rgba(26,47,35,.78); }
-    .strike{ text-decoration: line-through; opacity:.72; }
+    .strike{ text-decoration: line-through; opacity: .72; }
 
-    /* Commerce */
-    .buyGrid{
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      margin-top: 18px;
-      align-items:stretch;
-    }
-    @media (max-width: 920px){
-      .buyGrid{ grid-template-columns: 1fr; }
-    }
-    .pack{
-      padding: 20px;
-      border-radius: var(--radius2);
-      border:1px solid var(--line);
-      background: rgba(245,242,237,.72);
-      display:grid; gap: 12px;
-      position:relative;
-      overflow:hidden;
-    }
-    .pack.featured{
-      border-color: rgba(201,162,79,.45);
-      box-shadow: 0 20px 56px rgba(201,162,79,.12);
-    }
-    .price{
-      font-family: var(--serif);
-      font-weight:600;
-      font-size: 30px;
-      color: var(--forest);
-    }
-    .packUl{
-      margin:0; padding-left: 18px;
-      color: rgba(26,47,35,.86);
-    }
-    .packUl li{ margin: 6px 0; }
-    .packActions{ display:flex; gap:12px; flex-wrap:wrap; }
-
-    /* Cart drawer */
-    .drawer{
+    /* Sticky buy bar (mobile + desktop) */
+    .sticky{
       position: fixed;
-      top: 0; right: 0;
-      height: 100%;
-      width: min(420px, 92vw);
-      background: rgba(245,242,237,.92);
-      backdrop-filter: blur(10px);
-      border-left: 1px solid var(--line);
-      box-shadow: -18px 0 60px rgba(0,0,0,.10);
-      transform: translateX(110%);
-      transition: transform .18s ease;
-      z-index: 60;
+      left: 0; right: 0; bottom: 0;
+      background: rgba(245,242,237,.88);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(26,47,35,.14);
+      padding: 12px 12px;
+      z-index: 80;
+    }
+    .sticky .inner{
+      max-width: var(--max);
+      margin: 0 auto;
       display:flex;
-      flex-direction: column;
+      gap: 10px;
+      align-items:center;
+      justify-content:space-between;
     }
-    .drawer.open{ transform: translateX(0); }
-    .drawerHeader{
-      padding: 18px 18px 12px;
-      border-bottom: 1px solid rgba(26,47,35,.10);
-      display:flex; align-items:center; justify-content:space-between;
-      gap: 12px;
+    .sticky .left{
+      display:grid; gap:2px;
     }
-    .drawerTitle{
-      font-family: var(--serif);
-      font-weight:600;
-      font-size: 18px;
-      color: var(--forest);
-    }
-    .drawerBody{
-      padding: 14px 18px;
-      display:grid; gap: 12px;
-      overflow:auto;
-    }
-    .lineItem{
-      padding: 14px 14px;
-      border-radius: 18px;
-      border: 1px solid rgba(26,47,35,.12);
-      background: rgba(245,242,237,.72);
-      display:grid; gap: 10px;
-    }
-    .lineTop{
-      display:flex; justify-content:space-between; gap: 10px;
-      align-items:flex-start;
-    }
-    .qtyRow{
-      display:flex; gap:10px; align-items:center;
-    }
-    .qtyBtn{
-      width:32px; height:32px;
-      border-radius: 999px;
-      border:1px solid rgba(26,47,35,.22);
-      background: rgba(245,242,237,.85);
-      cursor:pointer;
-      font-weight:700;
-    }
-    .totals{
-      margin-top:auto;
-      padding: 14px 18px 18px;
-      border-top: 1px solid rgba(26,47,35,.10);
-      display:grid; gap: 10px;
-    }
-    .totalRow{
-      display:flex; justify-content:space-between; align-items:center;
-      font-weight:600;
-      color: rgba(26,47,35,.92);
-    }
-    .checkoutHint{
-      font-size: 12px;
-      color: rgba(26,47,35,.72);
-      line-height: 1.45;
-    }
-    .backdrop{
-      position:fixed; inset:0;
-      background: rgba(0,0,0,.28);
-      opacity:0; pointer-events:none;
-      transition: opacity .18s ease;
-      z-index: 55;
-    }
-    .backdrop.open{ opacity:1; pointer-events:auto; }
+    .sticky .name{ font-weight: 900; color: rgba(26,47,35,.92); font-size: 13px; }
+    .sticky .sub{ font-size: 12px; color: rgba(26,47,35,.70); }
+    .sticky .price{ font-family: var(--serif); font-weight: 700; color: var(--forest); }
 
     /* Footer */
     footer{
-      padding: 40px 0 60px;
+      padding: 46px 0 90px;
       border-top: 1px solid rgba(26,47,35,.10);
-      background: rgba(245,242,237,.7);
-    }
-    .footerGrid{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 18px;
-      align-items:start;
-    }
-    @media (max-width: 920px){
-      .footerGrid{ grid-template-columns: 1fr; }
-    }
-
-    /* Utility */
-    .divider{
-      height:1px;
-      background: rgba(26,47,35,.10);
-      margin: 18px 0;
-    }
-    .pill{
-      padding: 8px 10px;
-      border-radius: 999px;
-      border:1px solid rgba(26,47,35,.14);
       background: rgba(245,242,237,.72);
-      font-size: 12px;
-      color: rgba(26,47,35,.78);
-      display:inline-flex; gap:8px; align-items:center;
-    }
-    .pill strong{ color: rgba(26,47,35,.92); }
-    .notice{
-      padding: 14px 16px;
-      border-radius: 18px;
-      border:1px solid rgba(176,122,58,.26);
-      background: rgba(176,122,58,.08);
-      color: rgba(26,47,35,.86);
-      line-height: 1.5;
     }
   </style>
 </head>
 
 <body>
-  <!-- Topbar -->
   <div class="topbar">
     <div class="wrap">
       <div class="inner">
-        <a class="brand" href="#top" aria-label="PROTAMAX">
-          <div class="logoMark" aria-hidden="true"></div>
+        <a class="brand" href="#top">
+          <div class="mark" aria-hidden="true"></div>
           <div class="brandName">PROTAMAX</div>
         </a>
 
-        <nav class="nav" aria-label="Navigation">
-          <a href="#okr">Le produit</a>
+        <div class="nav" aria-label="Navigation">
+          <a href="#okr">Produit</a>
           <a href="#signatures">Signatures</a>
           <a href="#preuves">Preuves</a>
-          <a href="#match">Le match</a>
-          <button class="btn btn-ghost" id="openCartBtn" aria-label="Ouvrir le panier">
-            Panier <span id="cartCount" class="pill" style="padding:6px 10px;">0</span>
-          </button>
-        </nav>
+          <a href="#faq">FAQ</a>
+          <a class="btn btn-primary" href="#buy">Commander</a>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- HERO -->
   <main id="top">
+    <!-- HERO -->
     <section class="hero">
       <div class="wrap">
         <div class="heroGrid">
-          <!-- Copy -->
-          <div class="heroCopy">
-            <div class="badge"><span class="dot"></span> Protéine Entomologique Noble • Efficacité Planétaire</div>
+          <div class="heroBox">
+            <div class="pill"><span class="dot"></span> Protéine Entomologique Noble • Énergie durable • Clean Label</div>
 
-            <h1>PROTAMAX : La Révolution Nutritionnelle de 100g.</h1>
+            <h1>PROTAMAX : la barre repas 100g qui tient vraiment.</h1>
 
             <p style="font-size:16px;">
-              <span class="kpi">Plus de 26g de protéines</span>. Zéro additif.
-              L’énergie du <strong>Ténébrion Molitor</strong> dans une texture gastronomique.
+              <span class="kpi">+26g de protéines</span>. Zéro additif.
+              Une texture gastronomique, pensée pour une énergie stable et une satiété longue durée.
             </p>
 
+            <div class="trustRow">
+              <div class="trustGrid">
+                <div class="trust"><strong>Satiété ~4h</strong><br><span class="muted">densité + fibres</span></div>
+                <div class="trust"><strong>IG bas</strong><br><span class="muted">pas de crash</span></div>
+                <div class="trust"><strong>QR Suivi</strong><br><span class="muted">programme personnalisé</span></div>
+              </div>
+
+              <div class="trust" style="border-color: rgba(201,162,79,.30);">
+                <strong>Note</strong> 4,8/5 • <span class="muted">retours clients (démo)</span> •
+                <strong>Livraison</strong> 48–72h
+              </div>
+            </div>
+
             <div class="heroActions">
-              <button class="btn btn-primary" data-add="decouverte">
-                Commander mon Pack Découverte (6 barres)
-              </button>
-              <a class="btn" href="#packs">Voir les packs</a>
+              <a class="btn btn-primary" href="#buy">Commander maintenant</a>
+              <a class="btn" href="#match">Voir le match</a>
             </div>
 
-            <div class="heroMeta">
-              <div class="metaPill">Satiété ~4h</div>
-              <div class="metaPill">Index glycémique bas</div>
-              <div class="metaPill">Clean Label court</div>
-              <div class="metaPill">QR suivi personnalisé</div>
+            <p class="mini">
+              “Ce n’est pas une barre sucrée. C’est un <strong>protocole nutritionnel</strong> portable.”
+            </p>
+          </div>
+
+          <div class="heroMedia card">
+            <!-- Remplace par ton visuel PROTAMAX (macro barre coupée) -->
+            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1600&q=80"
+                 alt="Macro barre premium coupée en deux, texture cookie dough"/>
+            <div class="overlay"></div>
+          </div>
+        </div>
+
+        <!-- BUY (above the fold) -->
+        <div id="buy" class="card buyCard" style="margin-top:18px;">
+          <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:flex-end;">
+            <div>
+              <h2 style="margin-bottom:4px;">Choisis ton pack.</h2>
+              <p class="muted">Paiement sécurisé • Expédition 48–72h • Support email</p>
+            </div>
+            <div class="pill"><span class="dot"></span> Pack Performance = Livraison OFFERTE</div>
+          </div>
+
+          <div class="select" id="packSelect">
+            <div class="opt active" data-pack="decouverte">
+              <div class="left">
+                <div class="title">Pack Découverte (6 barres)</div>
+                <div class="sub">Idéal pour tester les 3 signatures • QR suivi inclus</div>
+              </div>
+              <div class="price">25,80 €</div>
             </div>
 
-            <div class="notice">
-              <strong>Une barre repas.</strong> Pas un snack sucré.
-              Formulée pour une énergie stable, une digestion maîtrisée et un apport micronutritionnel précis.
+            <div class="opt" data-pack="performance">
+              <div class="left">
+                <div class="title">Pack Performance (12 barres)</div>
+                <div class="sub">Livraison OFFERTE • Bilan micronutritionnel inclus • routine 30 jours</div>
+              </div>
+              <div class="price">48,00 €</div>
             </div>
           </div>
 
-          <!-- Media -->
-          <div class="heroMedia card" aria-label="Visuel macro barre PROTAMAX">
-            <!-- Remplace src par ton visuel (macro barre coupée / texture cookie dough) -->
-            <img
-              src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1400&q=80"
-              alt="Macro photo d'une barre premium coupée en deux, texture cookie dough"
-              loading="eager"
-            />
-            <div class="overlay" aria-hidden="true"></div>
+          <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:12px;">
+            <button class="btn btn-primary" id="buyBtn">Ajouter au panier</button>
+            <span class="mini" id="buyHint">Tu as sélectionné : Pack Découverte</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- OKR TRILOGY -->
+    <!-- OKR -->
     <section id="okr">
       <div class="wrap">
-        <div class="row" style="justify-content:space-between;">
-          <div>
-            <h2>La Trilogie OKR.</h2>
-            <p class="muted">Avantages. Ingrédients. Utilisation. Trois preuves. Zéro blabla.</p>
+        <h2>La Trilogie OKR.</h2>
+        <p class="muted">Avantages. Ingrédients. Utilisation. Trois preuves. Zéro blabla.</p>
+
+        <div class="okrGrid">
+          <div class="okr">
+            <div class="okrTop">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2l7 4v6c0 5-3 9-7 10-4-1-7-5-7-10V6l7-4Z" stroke-width="1.8"/><path d="M9.5 12l1.8 1.8L15 10" stroke-width="1.8"/></svg>
+              </div>
+              <h3>Avantages</h3>
+              <span class="pill"><span class="dot"></span> Densité</span>
+            </div>
+            <ul>
+              <li><strong>Fer</strong> & <strong>B12</strong> : focus micronutrition</li>
+              <li><strong>Satiété ~4h</strong> : densité + fibres</li>
+              <li><strong>IG bas</strong> : énergie stable</li>
+            </ul>
           </div>
-          <span class="pill"><strong>Tip :</strong> clique sur une carte</span>
-        </div>
 
-        <div class="grid okrGrid">
-          <!-- Avantages -->
-          <article class="okr active" data-okr="benefices" tabindex="0" role="button" aria-label="OKR Avantages">
+          <div class="okr">
             <div class="okrTop">
               <div class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2l7 4v6c0 5-3 9-7 10-4-1-7-5-7-10V6l7-4Z" stroke-width="1.8"/>
-                  <path d="M9.5 12l1.8 1.8L15 10" stroke-width="1.8"/>
-                </svg>
+                <svg viewBox="0 0 24 24"><path d="M12 21s7-4.4 7-11a7 7 0 0 0-14 0c0 6.6 7 11 7 11Z" stroke-width="1.8"/><path d="M9.2 10.2c1.2-2 3.3-3.3 5.6-3.6-0.4 2.5-1.8 4.8-4.1 6.1" stroke-width="1.8"/></svg>
               </div>
-              <div class="okrTitle">Avantages</div>
-              <div class="badge" style="background:rgba(201,162,79,.10); border-color:rgba(201,162,79,.28);">
-                <span class="dot"></span> Densité
-              </div>
+              <h3>Ingrédients</h3>
+              <span class="pill"><span class="dot"></span> Clean label</span>
             </div>
-            <div class="okrBody">
-              <p><strong>Micronutrition mesurable</strong> + énergie stable.</p>
-              <ul class="list">
-                <li><strong>Fer</strong> (profil supérieur à de nombreuses sources animales)</li>
-                <li><strong>B12 naturelle</strong> & magnésium biodisponible</li>
-                <li><strong>Satiété ~4h</strong> grâce à la densité et aux fibres</li>
-                <li>Index glycémique bas : pas de pic, pas de crash</li>
-              </ul>
-            </div>
-            <div class="okrFoot">
-              <span>Performance durable</span>
-              <span>↗ Focus</span>
-            </div>
-          </article>
+            <ul>
+              <li>Farine de <strong>Ténébrion Molitor</strong> (UE)</li>
+              <li>Isolat de pois • Purée d’amande</li>
+              <li>Sirop de tapioca • Sans additifs</li>
+            </ul>
+          </div>
 
-          <!-- Ingredients -->
-          <article class="okr" data-okr="ingredients" tabindex="0" role="button" aria-label="OKR Ingrédients">
+          <div class="okr">
             <div class="okrTop">
               <div class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M12 21s7-4.4 7-11a7 7 0 0 0-14 0c0 6.6 7 11 7 11Z" stroke-width="1.8"/>
-                  <path d="M9.2 10.2c1.2-2 3.3-3.3 5.6-3.6-0.4 2.5-1.8 4.8-4.1 6.1" stroke-width="1.8"/>
-                </svg>
+                <svg viewBox="0 0 24 24"><path d="M4 19h16" stroke-width="1.8"/><path d="M7 16l3-7 4 4 3-9" stroke-width="1.8"/></svg>
               </div>
-              <div class="okrTitle">Ingrédients</div>
-              <div class="badge"><span class="dot"></span> Clean Label</div>
+              <h3>Utilisation</h3>
+              <span class="pill"><span class="dot"></span> Protocole</span>
             </div>
-            <div class="okrBody">
-              <p><strong>Liste courte.</strong> Transparente. UE.</p>
-              <ul class="list">
-                <li>Farine de <strong>Ténébrion Molitor</strong> (UE)</li>
-                <li>Isolat de protéine de pois</li>
-                <li>Purée d’amande</li>
-                <li>Sirop de tapioca</li>
-              </ul>
-              <p class="small muted">Sans sucralose. Sans maltitol. Sans gélatine. Sans compromis digestif.</p>
-            </div>
-            <div class="okrFoot">
-              <span>Courte liste</span>
-              <span>✔ Zéro additif</span>
-            </div>
-          </article>
-
-          <!-- Use -->
-          <article class="okr" data-okr="utilisation" tabindex="0" role="button" aria-label="OKR Utilisation">
-            <div class="okrTop">
-              <div class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M4 19h16" stroke-width="1.8"/>
-                  <path d="M7 16l3-7 4 4 3-9" stroke-width="1.8"/>
-                  <path d="M10 9h0" stroke-width="1.8"/>
-                </svg>
-              </div>
-              <div class="okrTitle">Utilisation</div>
-              <div class="badge"><span class="dot"></span> Protocole</div>
-            </div>
-            <div class="okrBody">
-              <p><strong>Un format 100g</strong> pensé pour les journées exigeantes.</p>
-              <ul class="list">
-                <li>Post-workout intense : récupération + stabilité</li>
-                <li>Déjeuner d’affaires nomade : efficace, élégant</li>
-                <li>Bio-hacking de performance : routine et suivi</li>
-                <li>Voyage : nutrition portable sans crash</li>
-              </ul>
-            </div>
-            <div class="okrFoot">
-              <span>Nomade</span>
-              <span>⚡ Stable</span>
-            </div>
-          </article>
+            <ul>
+              <li>Post-workout intense</li>
+              <li>Déjeuner d’affaires nomade</li>
+              <li>Bio-hacking de performance</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -731,75 +532,36 @@
     <section id="signatures">
       <div class="wrap">
         <h2>Nos 3 Signatures.</h2>
-        <p class="muted">Gastronomiques. Denses. Pensées pour être désirables.</p>
+        <p class="muted">Gastronomiques. Denses. Désirables.</p>
 
-        <div class="grid productGrid">
-          <!-- Originale -->
-          <article class="product">
-            <div class="productMedia" aria-label="Visuel L'Originale Choco-Noisette">
-              <img
-                src="https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=1400&q=80"
-                alt="Barre chocolat noisette premium en macro"
-                loading="lazy"
-              />
+        <div class="prodGrid">
+          <article class="prod">
+            <div class="prodMedia">
+              <img src="https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=1600&q=80" alt="Choco Noisette"/>
             </div>
-            <div class="productBody">
-              <div class="row" style="justify-content:space-between;">
-                <h3>L’Originale <span class="muted">— Choco-Noisette</span></h3>
-                <span class="pill">Best-seller</span>
-              </div>
+            <div class="prodBody">
+              <h3>L’Originale — <span class="muted">Choco-Noisette</span></h3>
               <p><strong>Le classique gourmand.</strong> Intensité cacao et éclats de noisettes grillées.</p>
-              <div class="tagRow">
-                <span class="badge"><span class="dot"></span> Cacao</span>
-                <span class="badge"><span class="dot"></span> Noisette</span>
-                <span class="badge"><span class="dot"></span> Texture cookie dough</span>
-              </div>
             </div>
           </article>
 
-          <!-- Salty Peanut -->
-          <article class="product">
-            <div class="productMedia" aria-label="Visuel Salty Peanut">
-              <img
-                src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=1400&q=80"
-                alt="Barre cacahuète caramel salé premium en macro"
-                loading="lazy"
-              />
+          <article class="prod">
+            <div class="prodMedia">
+              <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=1600&q=80" alt="Salty Peanut"/>
             </div>
-            <div class="productBody">
-              <div class="row" style="justify-content:space-between;">
-                <h3>Le Salty Peanut <span class="muted">— Cacahuète & Caramel Salé</span></h3>
-                <span class="pill">Recovery</span>
-              </div>
-              <p><strong>Puissance et récupération.</strong> Beurre de cacahuète onctueux et pointe de sel de Guérande.</p>
-              <div class="tagRow">
-                <span class="badge"><span class="dot"></span> Peanut</span>
-                <span class="badge"><span class="dot"></span> Sel de Guérande</span>
-                <span class="badge"><span class="dot"></span> Post-workout</span>
-              </div>
+            <div class="prodBody">
+              <h3>Le Salty Peanut — <span class="muted">Caramel salé</span></h3>
+              <p><strong>Puissance & récupération.</strong> Beurre de cacahuète onctueux, pointe de sel.</p>
             </div>
           </article>
 
-          <!-- Red Berry -->
-          <article class="product">
-            <div class="productMedia" aria-label="Visuel Red Berry">
-              <img
-                src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=1400&q=80"
-                alt="Barre amande fruits rouges premium en macro"
-                loading="lazy"
-              />
+          <article class="prod">
+            <div class="prodMedia">
+              <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=1600&q=80" alt="Red Berry"/>
             </div>
-            <div class="productBody">
-              <div class="row" style="justify-content:space-between;">
-                <h3>Le Red Berry <span class="muted">— Amande & Fruits Rouges</span></h3>
-                <span class="pill">Light</span>
-              </div>
-              <p><strong>Fraîcheur et légèreté.</strong> Douceur de l’amande blanche et cranberries acidulées.</p>
-              <div class="tagRow">
-                <span class="badge"><span class="dot"></span> Amande</span>
-                <span class="badge"><span class="dot"></span> Cranberry</span>
-                <span class="badge"><span class="dot"></span> Équilibre</span>
-              </div>
+            <div class="prodBody">
+              <h3>Le Red Berry — <span class="muted">Amande & fruits rouges</span></h3>
+              <p><strong>Fraîcheur & légèreté.</strong> Amande blanche, cranberries acidulées.</p>
             </div>
           </article>
         </div>
@@ -810,45 +572,30 @@
     <section id="preuves">
       <div class="wrap">
         <h2>Le Mur des Preuves.</h2>
-        <p class="muted">Adopté par des lieux où la performance et l’esthétique comptent.</p>
+        <p class="muted">Adopté par des lieux où performance et esthétique comptent.</p>
 
-        <div class="logoRow">
-          <div class="logoCard">Blanche Paris</div>
-          <div class="logoCard">Le Klay</div>
-          <div class="logoCard">Reformation Pilates</div>
+        <div class="logos">
+          <div class="logo">Blanche Paris</div>
+          <div class="logo">Le Klay</div>
+          <div class="logo">Reformation Pilates</div>
         </div>
 
-        <div class="spacer"></div>
-
-        <div class="notice">
-          <strong>Développé avec des experts en nutrition médicale</strong> pour cibler des carences fréquentes chez les actifs :
-          <strong>Fer</strong> et <strong>B12</strong>. Un produit pensé pour “tenir” — pas pour juste “goûter”.
-        </div>
-
-        <div class="tiktok">
-          <div class="card pad">
-            <h3>Communauté TikTok</h3>
-            <p class="muted">Widget feed intégré : vidéos @TonCompte • ~300k vues/mois.</p>
-            <div class="divider"></div>
-            <p class="small muted">
-              Objectif : montrer la texture réelle, la routine, les retours clients, la preuve sociale.
+        <div class="twoCol">
+          <div class="box">
+            <h3>Développé avec expertise</h3>
+            <p class="muted" style="margin-top:8px;">
+              Développé avec des experts en nutrition médicale pour cibler des carences fréquentes :
+              <strong>Fer</strong> & <strong>B12</strong>. Une barre pensée pour “tenir”.
             </p>
-            <div class="spacer"></div>
-            <a class="btn btn-primary" href="#packs">Rejoindre PROTAMAX</a>
+            <div style="margin-top:12px;" class="pill"><span class="dot"></span> Scientifique, accessible, concret</div>
           </div>
 
-          <div class="tiktokWidget">
-            <div>
-              <div class="badge" style="justify-content:center; margin:0 auto 10px;">
-                <span class="dot"></span> TikTok Feed Placeholder
-              </div>
-              <p class="small">
-                Ici tu colles le code d’intégration TikTok (embed) de <strong>@TonCompte</strong>.
-              </p>
-              <p class="small muted" style="margin-top:8px;">
-                Ex : intégrer 6–9 vidéos, autoplay off, thumbnails propres.
-              </p>
-            </div>
+          <div class="box">
+            <h3>Communauté TikTok</h3>
+            <p class="muted" style="margin-top:8px;">
+              Ici tu peux intégrer le widget TikTok de <strong>@TonCompte</strong> (preuves, dégustations, routines).
+            </p>
+            <div style="margin-top:12px;" class="pill"><span class="dot"></span> ~300k vues/mois (démo)</div>
           </div>
         </div>
       </div>
@@ -860,353 +607,130 @@
         <h2>Comparaison Radicale.</h2>
         <p class="muted">Un tableau. Deux philosophies.</p>
 
-        <table aria-label="Comparaison Protamax vs barre classique">
+        <table>
           <thead>
             <tr>
               <th>Critère</th>
               <th>PROTAMAX (100g)</th>
-              <th>Barre de muscu classique</th>
+              <th>Barre muscu classique</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td><strong>Protéines</strong></td>
-              <td class="good">26g de protéines nobles</td>
-              <td class="bad">Souvent 15–20g • profil variable</td>
+              <td class="good">26g nobles</td>
+              <td class="bad">15–20g isolats</td>
             </tr>
             <tr>
-              <td><strong>Vitamine B12</strong></td>
+              <td><strong>B12</strong></td>
               <td class="good">Présente (naturelle)</td>
-              <td class="bad">Souvent absente / ajout synthétique</td>
+              <td class="bad">Rare / ajout synthétique</td>
             </tr>
             <tr>
               <td><strong>Fer</strong></td>
               <td class="good">Densité micronutritionnelle</td>
-              <td class="bad">Faible • rarement prioritaire</td>
+              <td class="bad">Faible</td>
             </tr>
             <tr>
               <td><strong>Additifs</strong></td>
-              <td class="good">Zéro additif</td>
+              <td class="good">Zéro</td>
               <td class="bad"><span class="strike">Sucralose</span>, maltitol, gélatine…</td>
             </tr>
             <tr>
               <td><strong>Digestion</strong></td>
-              <td class="good">Stable, maîtrisée</td>
+              <td class="good">Stable</td>
               <td class="bad">Ballonnements fréquents</td>
-            </tr>
-            <tr>
-              <td><strong>Énergie</strong></td>
-              <td class="good">Index glycémique bas • énergie durable</td>
-              <td class="bad">Pic / crash plus probable</td>
             </tr>
           </tbody>
         </table>
-
-        <div class="spacer"></div>
-        <div class="notice">
-          <strong>PROTAMAX</strong> n’essaie pas d’être “moins mauvais”.
-          Il vise une <strong>efficacité nutritionnelle</strong> et une <strong>désirabilité</strong> dignes du DTC luxury food.
-        </div>
       </div>
     </section>
 
-    <!-- PACKS / COMMERCE -->
-    <section id="packs">
+    <!-- FAQ -->
+    <section id="faq">
       <div class="wrap">
-        <h2>Choisis ton pack.</h2>
-        <p class="muted">Simple. Transparent. Optimisé.</p>
+        <h2>FAQ.</h2>
+        <p class="muted">Réponses simples. Ton sophistiqué. Zéro malaise.</p>
 
-        <div class="grid buyGrid">
-          <article class="pack">
-            <div class="row" style="justify-content:space-between;">
-              <h3>Pack Découverte</h3>
-              <span class="badge"><span class="dot"></span> Idéal pour tester</span>
-            </div>
-            <div class="price">25,80 €</div>
-            <p class="muted">6 barres assorties (les 3 signatures).</p>
-            <ul class="packUl">
-              <li>Découvrir goûts & texture</li>
-              <li>Tester la satiété ~4h</li>
-              <li>QR code : suivi personnalisé</li>
-            </ul>
-            <div class="packActions">
-              <button class="btn btn-primary" data-add="decouverte">Ajouter au panier</button>
-              <button class="btn" data-scroll="#qr">Voir le QR</button>
-            </div>
-          </article>
-
-          <article class="pack featured">
-            <div class="row" style="justify-content:space-between;">
-              <h3>Pack Performance</h3>
-              <span class="badge" style="background:rgba(201,162,79,.12); border-color:rgba(201,162,79,.34);">
-                <span class="dot"></span> Livraison OFFERTE
-              </span>
-            </div>
-            <div class="price">48,00 €</div>
-            <p class="muted">12 barres. Pour une routine qui tient.</p>
-            <ul class="packUl">
-              <li>Livraison OFFERTE</li>
-              <li><strong>Bilan micronutritionnel</strong> inclus</li>
-              <li>Accès prioritaire au programme QR</li>
-            </ul>
-            <div class="packActions">
-              <button class="btn btn-primary" data-add="performance">Ajouter au panier</button>
-              <button class="btn" data-scroll="#match">Revoir le match</button>
-            </div>
-          </article>
-        </div>
-
-        <div class="spacer"></div>
-
-        <div id="qr" class="card pad">
-          <div class="row" style="justify-content:space-between;">
-            <h3>QR Code — le suivi PROTAMAX</h3>
-            <span class="pill"><strong>Inclus</strong> dans chaque barre</span>
-          </div>
-          <div class="divider"></div>
-          <p>
-            Chaque barre contient un <strong>QR code unique</strong> pour accéder à un programme de suivi personnalisé :
-            tableau d’énergie, routine 30 jours, recommandations selon tes objectifs.
-          </p>
-          <div class="spacer"></div>
-          <div class="row">
-            <span class="badge"><span class="dot"></span> Suivi 30 jours</span>
-            <span class="badge"><span class="dot"></span> Routine performance</span>
-            <span class="badge"><span class="dot"></span> Micronutrition</span>
-            <span class="badge"><span class="dot"></span> Récupération</span>
-          </div>
+        <div class="faq">
+          <details open>
+            <summary>“Protéine entomologique noble” — ça veut dire quoi ?</summary>
+            <p>Une source protéique premium issue du <strong>Ténébrion Molitor</strong>, sélectionnée pour sa densité nutritionnelle et son efficacité planétaire.</p>
+          </details>
+          <details>
+            <summary>Est-ce que c’est sucré comme une barre classique ?</summary>
+            <p>Non. PROTAMAX vise une <strong>énergie stable</strong> (IG bas) et une <strong>satiété longue</strong>, sans édulcorants agressifs.</p>
+          </details>
+          <details>
+            <summary>Le QR code sert à quoi ?</summary>
+            <p>Chaque barre donne accès à un <strong>programme de suivi</strong> : routine 30 jours, recommandations, tableau micronutritionnel.</p>
+          </details>
+          <details>
+            <summary>Livraison et paiement ?</summary>
+            <p>Paiement sécurisé. Expédition 48–72h. Le Pack Performance inclut la <strong>livraison offerte</strong>.</p>
+          </details>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
     <footer>
       <div class="wrap">
-        <div class="footerGrid">
+        <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+          <div class="mark" aria-hidden="true"></div>
           <div>
-            <div class="row" style="gap:12px;">
-              <div class="logoMark" aria-hidden="true"></div>
-              <div>
-                <div class="brandName">PROTAMAX</div>
-                <p class="small muted">DTC Luxury Food — Protéine Entomologique Noble</p>
-              </div>
-            </div>
-            <div class="spacer"></div>
-            <p class="small muted">
-              Notes : Les allégations nutritionnelles exactes (Fer/B12/Mg) doivent être confirmées par vos analyses et votre étiquetage
-              (réglementation UE). Texte & design prêts pour intégration Shopify / Webflow.
-            </p>
-          </div>
-
-          <div class="card pad">
-            <h3>Prêt à passer au protocole ?</h3>
-            <p class="muted">Une barre 100g. Une énergie stable. Une efficacité planétaire.</p>
-            <div class="spacer"></div>
-            <div class="row">
-              <button class="btn btn-primary" data-add="decouverte">Pack Découverte</button>
-              <button class="btn" data-add="performance">Pack Performance</button>
-            </div>
-            <div class="spacer"></div>
-            <p class="small muted">© <span id="year"></span> PROTAMAX. Tous droits réservés.</p>
+            <div class="brandName">PROTAMAX</div>
+            <p class="muted" style="font-size:12px;">DTC Luxury Food — Minimalisme radical • Masstige nature</p>
           </div>
         </div>
+        <p class="muted" style="font-size:12px; margin-top:14px;">
+          Note : les valeurs nutritionnelles finales (Fer/B12/etc.) doivent être confirmées par analyses et étiquetage UE.
+        </p>
       </div>
     </footer>
   </main>
 
-  <!-- Cart Backdrop + Drawer -->
-  <div class="backdrop" id="backdrop" aria-hidden="true"></div>
-
-  <aside class="drawer" id="drawer" aria-label="Panier">
-    <div class="drawerHeader">
-      <div class="drawerTitle">Panier</div>
-      <button class="btn btn-ghost" id="closeCartBtn">Fermer</button>
-    </div>
-
-    <div class="drawerBody" id="cartItems">
-      <!-- injected -->
-    </div>
-
-    <div class="totals">
-      <div class="totalRow">
-        <span>Total</span>
-        <span id="cartTotal">0,00 €</span>
+  <!-- Sticky buy bar -->
+  <div class="sticky" aria-label="Barre d’achat">
+    <div class="inner">
+      <div class="left">
+        <div class="name" id="stickyName">Pack Découverte (6 barres)</div>
+        <div class="sub">+26g protéines • Zéro additif • QR suivi</div>
       </div>
-      <button class="btn btn-primary" id="checkoutBtn">Passer commande</button>
-      <div class="checkoutHint">
-        Démo : ce bouton simule une redirection checkout.
-        Branche Shopify / Stripe en production.
+      <div style="display:flex; gap:10px; align-items:center;">
+        <div class="price" id="stickyPrice">25,80 €</div>
+        <button class="btn btn-primary" id="stickyBuy">Ajouter</button>
       </div>
     </div>
-  </aside>
+  </div>
 
   <script>
-    // ---- Helpers
-    const euro = (n) => (n).toFixed(2).replace(".", ",") + " €";
-    const qs = (s, el=document) => el.querySelector(s);
-    const qsa = (s, el=document) => [...el.querySelectorAll(s)];
-
-    // ---- Year
-    qs("#year").textContent = new Date().getFullYear();
-
-    // ---- OKR interaction
-    const okrCards = qsa(".okr");
-    okrCards.forEach(card => {
-      const activate = () => {
-        okrCards.forEach(c => c.classList.remove("active"));
-        card.classList.add("active");
-      };
-      card.addEventListener("click", activate);
-      card.addEventListener("keydown", (e) => {
-        if(e.key === "Enter" || e.key === " ") { e.preventDefault(); activate(); }
-      });
-    });
-
-    // ---- Smooth scroll
-    qsa("[data-scroll]").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const target = btn.getAttribute("data-scroll");
-        const el = document.querySelector(target);
-        if(el) el.scrollIntoView({behavior:"smooth", block:"start"});
-      });
-    });
-
-    // ---- Cart (simple)
-    const PRODUCTS = {
-      decouverte: {
-        id: "decouverte",
-        name: "Pack Découverte (6 barres)",
-        price: 25.80,
-        perks: ["Idéal pour tester", "3 signatures", "QR suivi personnalisé"]
-      },
-      performance: {
-        id: "performance",
-        name: "Pack Performance (12 barres)",
-        price: 48.00,
-        perks: ["Livraison OFFERTE", "Bilan micronutritionnel inclus", "Accès prioritaire au programme QR"]
-      }
+    const packs = {
+      decouverte: { name: "Pack Découverte (6 barres)", price: "25,80 €" },
+      performance: { name: "Pack Performance (12 barres)", price: "48,00 €" }
     };
 
-    let cart = JSON.parse(localStorage.getItem("protamax_cart") || "{}");
+    let selected = "decouverte";
+    const opts = [...document.querySelectorAll(".opt")];
 
-    const drawer = qs("#drawer");
-    const backdrop = qs("#backdrop");
-    const cartCount = qs("#cartCount");
-    const cartItems = qs("#cartItems");
-    const cartTotal = qs("#cartTotal");
+    const hint = document.getElementById("buyHint");
+    const stickyName = document.getElementById("stickyName");
+    const stickyPrice = document.getElementById("stickyPrice");
 
-    function openCart(){
-      drawer.classList.add("open");
-      backdrop.classList.add("open");
-      backdrop.setAttribute("aria-hidden", "false");
-    }
-    function closeCart(){
-      drawer.classList.remove("open");
-      backdrop.classList.remove("open");
-      backdrop.setAttribute("aria-hidden", "true");
+    function setPack(id){
+      selected = id;
+      opts.forEach(o => o.classList.toggle("active", o.dataset.pack === id));
+      hint.textContent = "Tu as sélectionné : " + packs[id].name;
+      stickyName.textContent = packs[id].name;
+      stickyPrice.textContent = packs[id].price;
     }
 
-    qs("#openCartBtn").addEventListener("click", openCart);
-    qs("#closeCartBtn").addEventListener("click", closeCart);
-    backdrop.addEventListener("click", closeCart);
+    opts.forEach(o => o.addEventListener("click", () => setPack(o.dataset.pack)));
 
-    function saveCart(){
-      localStorage.setItem("protamax_cart", JSON.stringify(cart));
+    function buy(){
+      alert("Démo panier : " + packs[selected].name + " (" + packs[selected].price + ")\\n\\nEn production : Shopify Checkout / Stripe.");
     }
-
-    function getCount(){
-      return Object.values(cart).reduce((a,b)=>a+b,0);
-    }
-
-    function getTotal(){
-      return Object.entries(cart).reduce((sum,[id,qty])=>{
-        const p = PRODUCTS[id];
-        return sum + (p ? p.price*qty : 0);
-      },0);
-    }
-
-    function renderCart(){
-      const count = getCount();
-      cartCount.textContent = count;
-
-      const total = getTotal();
-      cartTotal.textContent = euro(total);
-
-      const entries = Object.entries(cart).filter(([_,qty])=>qty>0);
-      if(entries.length === 0){
-        cartItems.innerHTML = `
-          <div class="lineItem">
-            <div><strong>Ton panier est vide.</strong></div>
-            <div class="small muted">Ajoute un pack pour commencer le protocole PROTAMAX.</div>
-          </div>`;
-        return;
-      }
-
-      cartItems.innerHTML = entries.map(([id,qty])=>{
-        const p = PRODUCTS[id];
-        return `
-          <div class="lineItem" data-item="${id}">
-            <div class="lineTop">
-              <div>
-                <div style="font-weight:700; color: rgba(26,47,35,.92);">${p.name}</div>
-                <div class="small muted">${p.perks.join(" • ")}</div>
-              </div>
-              <div style="font-weight:700; color: var(--forest);">${euro(p.price*qty)}</div>
-            </div>
-
-            <div class="qtyRow">
-              <button class="qtyBtn" data-dec="${id}" aria-label="Diminuer quantité">−</button>
-              <div class="pill"><strong>${qty}</strong> unité(s)</div>
-              <button class="qtyBtn" data-inc="${id}" aria-label="Augmenter quantité">+</button>
-              <button class="btn btn-ghost" data-rm="${id}" style="margin-left:auto;">Retirer</button>
-            </div>
-          </div>
-        `;
-      }).join("");
-
-      // bind
-      qsa("[data-inc]").forEach(b => b.addEventListener("click", ()=>{
-        const id = b.getAttribute("data-inc");
-        cart[id] = (cart[id]||0)+1;
-        saveCart(); renderCart();
-      }));
-      qsa("[data-dec]").forEach(b => b.addEventListener("click", ()=>{
-        const id = b.getAttribute("data-dec");
-        cart[id] = Math.max(0,(cart[id]||0)-1);
-        if(cart[id]===0) delete cart[id];
-        saveCart(); renderCart();
-      }));
-      qsa("[data-rm]").forEach(b => b.addEventListener("click", ()=>{
-        const id = b.getAttribute("data-rm");
-        delete cart[id];
-        saveCart(); renderCart();
-      }));
-    }
-
-    function addToCart(id){
-      if(!PRODUCTS[id]) return;
-      cart[id] = (cart[id]||0)+1;
-      saveCart();
-      renderCart();
-      openCart();
-    }
-
-    qsa("[data-add]").forEach(btn=>{
-      btn.addEventListener("click", ()=> addToCart(btn.getAttribute("data-add")));
-    });
-
-    qs("#checkoutBtn").addEventListener("click", ()=>{
-      // Demo checkout
-      const total = getTotal();
-      if(total <= 0){
-        openCart();
-        return;
-      }
-      alert("Checkout démo : total " + euro(total) + "\\n\\nEn production : redirection Shopify Checkout / Stripe.");
-    });
-
-    // init
-    renderCart();
+    document.getElementById("buyBtn").addEventListener("click", buy);
+    document.getElementById("stickyBuy").addEventListener("click", buy);
   </script>
 </body>
 </html>
