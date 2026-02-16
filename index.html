@@ -3,321 +3,372 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>PROTAMAX — Barres repas 100g | DTC Luxury Food</title>
-  <meta name="description" content="PROTAMAX : barres repas 100g à protéine entomologique noble. +26g protéines, zéro additif, énergie stable. Packs Découverte & Performance."/>
+  <title>PROTAMAX — Barres-repas 100g</title>
+  <meta name="description" content="PROTAMAX : barres-repas 100g. +26g protéines. Zéro additif. Texture gastronomique. Packs Découverte & Performance."/>
   <meta name="theme-color" content="#1A2F23"/>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
       --forest:#1A2F23;
       --sand:#F5F2ED;
-      --matte:#1A1A1A;
-      --copper:#B07A3A;
-      --gold:#C9A24F;
-
+      --ink:#1A1A1A;
+      --muted: rgba(26,47,35,.55);
       --line: rgba(26,47,35,.14);
-      --shadow: 0 18px 55px rgba(0,0,0,.10);
-      --radius: 22px;
-      --radius2: 30px;
+      --gold:#C9A24F;
+      --copper:#B07A3A;
 
       --serif: "Fraunces", ui-serif, Georgia, serif;
       --sans: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      --max: 1140px;
+
+      --max: 1120px;
+      --r: 18px;
+      --r2: 26px;
     }
 
     *{ box-sizing:border-box; }
     body{
       margin:0;
-      font-family:var(--sans);
-      background: var(--sand);
-      color: var(--matte);
+      font-family: var(--sans);
+      color: var(--ink);
+      background: #fff;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
     a{ color:inherit; text-decoration:none; }
     .wrap{ max-width: var(--max); margin:0 auto; padding: 0 18px; }
 
+    /* Announcement bar */
+    .announce{
+      background: var(--forest);
+      color: #fff;
+      font-weight:700;
+      font-size: 13px;
+      letter-spacing:.2px;
+      text-align:center;
+      padding: 10px 12px;
+    }
+
     /* Header */
     .topbar{
-      position:sticky; top:0; z-index:50;
-      background: rgba(245,242,237,.82);
-      backdrop-filter: blur(12px);
+      position: sticky; top:0; z-index:50;
+      background: rgba(255,255,255,.9);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--line);
     }
     .topbar .inner{
       display:flex; align-items:center; justify-content:space-between;
       padding: 14px 0;
-      gap: 14px;
+      gap: 12px;
     }
-    .brand{ display:flex; align-items:center; gap:12px; }
-    .mark{
-      width:34px; height:34px; border-radius: 12px;
-      background: radial-gradient(120% 120% at 20% 20%, rgba(201,162,79,.55), rgba(26,47,35,.92));
-      border: 1px solid rgba(201,162,79,.35);
-      box-shadow: 0 12px 28px rgba(26,47,35,.18);
-    }
-    .brandName{
-      font-weight:700;
-      letter-spacing:.6px;
-      font-size: 14px;
-      text-transform: uppercase;
-      color: rgba(26,47,35,.95);
-    }
-    .nav{ display:flex; align-items:center; gap: 10px; flex-wrap:wrap; }
-    .nav a{
-      font-size: 13px;
-      color: rgba(26,47,35,.82);
-      padding: 8px 10px;
+    .leftIcons, .rightIcons{ display:flex; gap: 14px; align-items:center; }
+    .iconBtn{
+      width: 40px; height: 40px;
       border-radius: 999px;
-    }
-    .nav a:hover{ background: rgba(26,47,35,.06); }
-
-    /* Buttons */
-    .btn{
-      border: 1px solid rgba(26,47,35,.22);
-      background: rgba(245,242,237,.85);
-      padding: 12px 14px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 13px;
+      border: 1px solid transparent;
+      display:grid; place-items:center;
       cursor:pointer;
-      transition: transform .12s ease, background .12s ease, border-color .12s ease;
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    }
+    .iconBtn:hover{ border-color: var(--line); background: rgba(26,47,35,.04); }
+    .iconBtn svg{ width:22px; height:22px; stroke: rgba(26,47,35,.9); fill:none; stroke-width:1.8; }
+
+    .logo{
+      font-family: var(--sans);
+      font-weight: 900;
+      letter-spacing: 4px;
+      font-size: 18px;
+    }
+
+    /* Tabs */
+    .tabs{
+      display:flex;
+      gap: 22px;
+      align-items:center;
+      padding: 14px 0 10px;
+      border-bottom: 1px solid var(--line);
+    }
+    .tab{
+      font-weight: 800;
+      letter-spacing:.2px;
+      color: rgba(26,47,35,.55);
+      padding-bottom: 10px;
+      border-bottom: 3px solid transparent;
+      cursor:pointer;
       user-select:none;
     }
-    .btn:hover{ transform: translateY(-1px); background: rgba(26,47,35,.06); border-color: rgba(26,47,35,.32); }
-    .btn:active{ transform: translateY(0); }
-    .btn-primary{
-      background: var(--forest);
-      color: var(--sand);
-      border-color: #14251c;
-      box-shadow: 0 18px 34px rgba(26,47,35,.18);
+    .tab.active{
+      color: rgba(26,47,35,.92);
+      border-bottom-color: rgba(26,47,35,.92);
     }
-    .btn-primary:hover{ background:#14251c; }
 
-    .pill{
-      display:inline-flex; align-items:center; gap:8px;
-      padding: 8px 12px;
+    /* Headline block */
+    section{ padding: 26px 0 0; }
+    .headline{
+      position:relative;
+      padding: 24px 0 8px;
+    }
+    .headline h1{
+      font-family: var(--serif);
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.02;
+      margin:0;
+    }
+    .headline .sub{
+      font-size: 18px;
+      margin-top: 10px;
+      color: rgba(26,47,35,.78);
+    }
+    .ghostWord{
+      position:absolute;
+      inset: 0;
+      display:flex;
+      align-items:flex-end;
+      justify-content:flex-start;
+      pointer-events:none;
+      opacity:.06;
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(70px, 10vw, 140px);
+      transform: translateY(12px);
+      white-space:nowrap;
+    }
+
+    .intro{
+      margin-top: 10px;
+      max-width: 62ch;
+      color: rgba(26,47,35,.6);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* Product grid */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 18px;
+      padding-bottom: 24px;
+    }
+    @media (max-width: 920px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      border: 1px solid var(--line);
+      border-radius: var(--r2);
+      background: #fff;
+      overflow:hidden;
+    }
+    .media{
+      background: #fff;
+      padding: 18px 18px 0;
+      min-height: 260px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .cardBody{
+      padding: 16px 18px 18px;
+      border-top: 1px solid rgba(26,47,35,.08);
+    }
+    .badgeRow{
+      display:flex;
+      gap: 8px;
+      flex-wrap:wrap;
+      margin-bottom: 10px;
+    }
+    .badge{
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing:.3px;
+      padding: 8px 10px;
       border-radius: 999px;
       border: 1px solid rgba(26,47,35,.14);
-      background: rgba(245,242,237,.75);
-      color: rgba(26,47,35,.80);
-      font-size: 12px;
-      font-weight:600;
+      background: rgba(26,47,35,.03);
+      text-transform: uppercase;
     }
-    .pill .dot{
-      width:8px; height:8px; border-radius:999px;
-      background: linear-gradient(180deg, var(--gold), var(--copper));
-      box-shadow: 0 8px 18px rgba(201,162,79,.22);
+    .badge.gold{
+      border-color: rgba(201,162,79,.35);
+      background: rgba(201,162,79,.10);
     }
 
-    /* Type */
-    h1,h2,h3{ font-family: var(--serif); margin:0; }
-    h1{ font-size: clamp(34px, 4.2vw, 58px); line-height: 1.04; }
-    h2{ font-size: clamp(24px, 3.2vw, 40px); line-height: 1.1; }
-    h3{ font-size: 18px; line-height: 1.2; }
-    p{ margin:0; line-height: 1.6; color: rgba(26,47,35,.86); }
-    .muted{ color: rgba(26,47,35,.72); }
-    .kpi{ color: var(--forest); font-weight:800; }
-
-    /* Sections */
-    section{ padding: 70px 0; }
-    .card{
-      background: rgba(245,242,237,.78);
-      border: 1px solid var(--line);
-      border-radius: var(--radius2);
-      box-shadow: var(--shadow);
+    .prodTitle{
+      font-family: var(--serif);
+      font-size: 30px;
+      line-height: 1.08;
+      margin:0;
     }
+    .price{
+      font-weight: 900;
+      color: rgba(26,47,35,.92);
+      font-size: 22px;
+      margin-top: 8px;
+    }
+    .meta{
+      margin-top: 10px;
+      color: rgba(26,47,35,.6);
+      font-size: 13px;
+    }
+    .ctaRow{
+      display:flex;
+      gap: 10px;
+      flex-wrap:wrap;
+      margin-top: 12px;
+    }
+    .btn{
+      border: 1px solid rgba(26,47,35,.18);
+      background: #fff;
+      padding: 12px 14px;
+      border-radius: 999px;
+      font-weight: 900;
+      letter-spacing:.2px;
+      cursor:pointer;
+    }
+    .btn:hover{ background: rgba(26,47,35,.04); }
+    .btn.primary{
+      background: var(--forest);
+      color:#fff;
+      border-color: var(--forest);
+    }
+    .btn.primary:hover{ background:#14251c; }
 
-    /* Hero */
-    .hero{ padding: 34px 0 56px; }
-    .heroGrid{
+    /* Info slider */
+    .info{
+      padding: 26px 0 34px;
+      border-top: 1px solid var(--line);
+      margin-top: 12px;
+    }
+    .infoTabs{
+      display:flex;
+      gap: 18px;
+      align-items:center;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-bottom: 18px;
+    }
+    .infoTab{
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 30px;
+      color: rgba(26,47,35,.28);
+      cursor:pointer;
+      user-select:none;
+      border-bottom: 4px solid transparent;
+      padding-bottom: 6px;
+    }
+    .infoTab.active{
+      color: var(--forest);
+      border-bottom-color: var(--forest);
+    }
+    .infoStage{
       display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 22px;
-      align-items:stretch;
+      place-items:center;
+      text-align:center;
+      padding: 6px 0 0;
     }
-    @media (max-width: 980px){
-      .heroGrid{ grid-template-columns: 1fr; }
+    .stageTitle{
+      font-weight: 900;
+      letter-spacing:.6px;
+      color: var(--forest);
+      text-transform: uppercase;
+      margin-top: 10px;
     }
-    .heroMedia{
-      position:relative;
-      overflow:hidden;
-      border-radius: var(--radius2);
-      min-height: 420px;
-      border: 1px solid var(--line);
-      background:
-        radial-gradient(120% 90% at 20% 10%, rgba(201,162,79,.18), transparent 52%),
-        radial-gradient(120% 90% at 90% 90%, rgba(26,47,35,.18), transparent 58%),
-        linear-gradient(180deg, rgba(26,47,35,.08), rgba(26,47,35,.02));
+    .stageText{
+      max-width: 62ch;
+      color: rgba(26,47,35,.72);
+      margin-top: 10px;
+      line-height: 1.65;
     }
-    .heroMedia img{
-      width:100%; height:100%;
-      object-fit:cover; display:block;
-      filter: contrast(1.05) saturate(1.02);
-    }
-    .heroMedia .overlay{
-      position:absolute; inset:0;
-      background:
-        linear-gradient(90deg, rgba(245,242,237,.42), rgba(245,242,237,0) 48%),
-        linear-gradient(180deg, rgba(245,242,237,0) 55%, rgba(245,242,237,.62));
-      pointer-events:none;
+    .stageArt{
+      width: min(520px, 92vw);
+      margin: 6px auto 0;
     }
 
-    .heroBox{
-      display:grid; gap: 14px;
-      padding: 6px 2px;
-      align-content:start;
+    /* Packs */
+    .packsTitle{
+      font-family: var(--serif);
+      font-size: clamp(38px, 5vw, 64px);
+      margin: 0;
     }
-    .heroActions{ display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:6px; }
-    .trustRow{ display:grid; gap:10px; margin-top: 10px; }
-    .trustGrid{
+    .packsSub{
+      color: rgba(26,47,35,.68);
+      font-size: 18px;
+      margin-top: 8px;
+    }
+    .packsGrid{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 18px;
+      padding-bottom: 40px;
+    }
+    @media (max-width: 920px){
+      .packsGrid{ grid-template-columns: 1fr; }
+    }
+
+    /* Proof + comparison (minimal) */
+    .proof{
+      border-top: 1px solid var(--line);
+      padding: 26px 0 40px;
+    }
+    .logos{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 10px;
+      margin-top: 14px;
     }
-    @media (max-width: 520px){
-      .trustGrid{ grid-template-columns: 1fr; }
+    @media (max-width: 920px){
+      .logos{ grid-template-columns: 1fr; }
     }
-    .trust{
-      padding: 12px 12px;
-      border-radius: 18px;
-      border: 1px solid rgba(26,47,35,.12);
-      background: rgba(245,242,237,.72);
-      font-size: 12px;
-      color: rgba(26,47,35,.80);
-    }
-
-    /* Buy Card */
-    .buyCard{ padding: 18px; }
-    .select{
-      display:grid; gap: 10px;
-      margin-top: 8px;
-    }
-    .opt{
-      padding: 14px 14px;
-      border-radius: 18px;
+    .logoCard{
       border: 1px solid rgba(26,47,35,.14);
-      background: rgba(245,242,237,.75);
-      display:flex; align-items:flex-start; justify-content:space-between; gap: 10px;
-      cursor:pointer;
-      transition: border-color .12s ease, transform .12s ease;
-    }
-    .opt:hover{ transform: translateY(-1px); border-color: rgba(26,47,35,.28); }
-    .opt.active{ border-color: rgba(201,162,79,.52); box-shadow: 0 18px 42px rgba(201,162,79,.10); }
-    .opt .left{ display:grid; gap: 4px; }
-    .opt .title{ font-weight:800; color: rgba(26,47,35,.92); }
-    .opt .sub{ font-size: 12px; color: rgba(26,47,35,.74); line-height: 1.35; }
-    .opt .price{
-      font-family: var(--serif);
-      font-weight: 700;
-      color: var(--forest);
-      white-space:nowrap;
-    }
-    .mini{ font-size: 12px; color: rgba(26,47,35,.72); }
-
-    /* OKR */
-    .okrGrid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 16px;
-    }
-    @media (max-width: 980px){ .okrGrid{ grid-template-columns: 1fr; } }
-    .okr{
-      padding: 20px;
-      border-radius: var(--radius2);
-      border: 1px solid var(--line);
-      background: rgba(245,242,237,.78);
-    }
-    .okrTop{ display:flex; align-items:center; justify-content:space-between; gap: 10px; margin-bottom: 10px; }
-    .icon{
-      width: 42px; height: 42px; border-radius: 16px;
-      border: 1px solid rgba(26,47,35,.12);
-      background: rgba(26,47,35,.06);
-      display:grid; place-items:center;
-    }
-    .icon svg{ width:22px; height:22px; stroke: rgba(26,47,35,.92); fill:none; }
-    ul{ margin: 0; padding-left: 18px; color: rgba(26,47,35,.86); line-height: 1.6; }
-    li{ margin: 6px 0; }
-
-    /* Signatures */
-    .prodGrid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 16px;
-    }
-    @media (max-width: 980px){ .prodGrid{ grid-template-columns: 1fr; } }
-    .prod{
-      border-radius: var(--radius2);
-      border: 1px solid var(--line);
-      overflow:hidden;
-      background: rgba(245,242,237,.78);
-      transition: transform .12s ease, border-color .12s ease;
-    }
-    .prod:hover{ transform: translateY(-2px); border-color: rgba(26,47,35,.28); }
-    .prodMedia{ height: 210px; background: rgba(26,47,35,.05); border-bottom: 1px solid rgba(26,47,35,.10); }
-    .prodMedia img{ width:100%; height:100%; object-fit:cover; display:block; }
-    .prodBody{ padding: 16px 18px 18px; display:grid; gap: 10px; }
-
-    /* Proof + FAQ */
-    .logos{
-      display:grid; grid-template-columns: repeat(3, 1fr);
-      gap: 10px; margin-top: 14px;
-    }
-    @media (max-width: 980px){ .logos{ grid-template-columns: 1fr; } }
-    .logo{
+      border-radius: var(--r2);
       padding: 16px;
-      border-radius: var(--radius2);
-      border: 1px solid rgba(26,47,35,.14);
-      background: rgba(245,242,237,.78);
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: .3px;
-      color: rgba(26,47,35,.84);
       text-align:center;
+      font-weight: 900;
+      letter-spacing:.4px;
+      text-transform: uppercase;
+      color: rgba(26,47,35,.84);
+      background: rgba(26,47,35,.02);
     }
-
     .twoCol{
       display:grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
       margin-top: 16px;
-      align-items:start;
     }
-    @media (max-width: 980px){ .twoCol{ grid-template-columns: 1fr; } }
-    .box{ padding: 18px; border-radius: var(--radius2); border: 1px solid var(--line); background: rgba(245,242,237,.78); }
-
-    .faq{ display:grid; gap: 10px; margin-top: 10px; }
-    details{
+    @media (max-width: 920px){
+      .twoCol{ grid-template-columns: 1fr; }
+    }
+    .box{
       border: 1px solid rgba(26,47,35,.14);
-      background: rgba(245,242,237,.78);
-      border-radius: 18px;
-      padding: 12px 14px;
+      border-radius: var(--r2);
+      padding: 18px;
+      background: #fff;
     }
-    summary{
-      cursor:pointer;
-      font-weight: 800;
-      color: rgba(26,47,35,.92);
+    .tiktok{
+      border: 1px dashed rgba(26,47,35,.28);
+      border-radius: var(--r2);
+      padding: 18px;
+      min-height: 200px;
+      display:grid;
+      place-items:center;
+      text-align:center;
+      color: rgba(26,47,35,.7);
+      background: rgba(26,47,35,.02);
     }
-    details p{ margin-top: 8px; }
 
-    /* Comparison */
     table{
       width:100%;
       border-collapse: separate;
       border-spacing:0;
       overflow:hidden;
-      border-radius: var(--radius2);
-      border: 1px solid var(--line);
-      background: rgba(245,242,237,.78);
-      box-shadow: var(--shadow);
-      margin-top: 16px;
+      border-radius: var(--r2);
+      border: 1px solid rgba(26,47,35,.14);
+      margin-top: 14px;
     }
     th, td{
       padding: 14px 14px;
@@ -326,411 +377,463 @@
     }
     th{
       text-align:left;
-      font-size: 12px;
       text-transform: uppercase;
-      letter-spacing: .5px;
-      color: rgba(26,47,35,.78);
-      background: rgba(26,47,35,.04);
+      font-size: 12px;
+      letter-spacing:.5px;
+      color: rgba(26,47,35,.7);
+      background: rgba(26,47,35,.03);
     }
     tr:last-child td{ border-bottom:none; }
-    .good{ font-weight:800; color: var(--forest); }
-    .bad{ color: rgba(26,47,35,.78); }
-    .strike{ text-decoration: line-through; opacity: .72; }
+    .good{ font-weight: 900; color: var(--forest); }
+    .bad{ color: rgba(26,47,35,.72); }
+    .strike{ text-decoration: line-through; opacity:.7; }
 
-    /* Sticky buy bar (mobile + desktop) */
-    .sticky{
-      position: fixed;
-      left: 0; right: 0; bottom: 0;
-      background: rgba(245,242,237,.88);
-      backdrop-filter: blur(12px);
-      border-top: 1px solid rgba(26,47,35,.14);
-      padding: 12px 12px;
-      z-index: 80;
-    }
-    .sticky .inner{
-      max-width: var(--max);
-      margin: 0 auto;
-      display:flex;
-      gap: 10px;
-      align-items:center;
-      justify-content:space-between;
-    }
-    .sticky .left{
-      display:grid; gap:2px;
-    }
-    .sticky .name{ font-weight: 900; color: rgba(26,47,35,.92); font-size: 13px; }
-    .sticky .sub{ font-size: 12px; color: rgba(26,47,35,.70); }
-    .sticky .price{ font-family: var(--serif); font-weight: 700; color: var(--forest); }
-
-    /* Footer */
     footer{
-      padding: 46px 0 90px;
-      border-top: 1px solid rgba(26,47,35,.10);
-      background: rgba(245,242,237,.72);
+      border-top: 1px solid var(--line);
+      padding: 22px 0 40px;
+      color: rgba(26,47,35,.6);
+      font-size: 12px;
     }
   </style>
 </head>
 
 <body>
-  <div class="topbar">
+  <div class="announce">👉 Pack Performance : Livraison OFFERTE + Bilan micronutritionnel inclus 👉</div>
+
+  <header class="topbar">
     <div class="wrap">
       <div class="inner">
-        <a class="brand" href="#top">
-          <div class="mark" aria-hidden="true"></div>
-          <div class="brandName">PROTAMAX</div>
-        </a>
-
-        <div class="nav" aria-label="Navigation">
-          <a href="#okr">Produit</a>
-          <a href="#signatures">Signatures</a>
-          <a href="#preuves">Preuves</a>
-          <a href="#faq">FAQ</a>
-          <a class="btn btn-primary" href="#buy">Commander</a>
+        <div class="leftIcons">
+          <button class="iconBtn" aria-label="Menu" onclick="alert('Démo : menu')">
+            <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+          <button class="iconBtn" aria-label="Recherche" onclick="alert('Démo : recherche')">
+            <svg viewBox="0 0 24 24"><path d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"/><path d="M16.2 16.2 21 21"/></svg>
+          </button>
         </div>
+
+        <div class="logo">PROTAMAX</div>
+
+        <div class="rightIcons">
+          <button class="iconBtn" aria-label="Panier" onclick="alert('Démo : panier (à brancher Shopify/Stripe)')">
+            <svg viewBox="0 0 24 24"><path d="M6 8h14l-1.5 13H7.5L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <div class="tab active" data-page="bars">BARRES-REPAS.</div>
+        <div class="tab" data-page="packs">PACKS.</div>
       </div>
     </div>
-  </div>
+  </header>
 
-  <main id="top">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="wrap">
-        <div class="heroGrid">
-          <div class="heroBox">
-            <div class="pill"><span class="dot"></span> Protéine Entomologique Noble • Énergie durable • Clean Label</div>
-
-            <h1>PROTAMAX : la barre repas 100g qui tient vraiment.</h1>
-
-            <p style="font-size:16px;">
-              <span class="kpi">+26g de protéines</span>. Zéro additif.
-              Une texture gastronomique, pensée pour une énergie stable et une satiété longue durée.
-            </p>
-
-            <div class="trustRow">
-              <div class="trustGrid">
-                <div class="trust"><strong>Satiété ~4h</strong><br><span class="muted">densité + fibres</span></div>
-                <div class="trust"><strong>IG bas</strong><br><span class="muted">pas de crash</span></div>
-                <div class="trust"><strong>QR Suivi</strong><br><span class="muted">programme personnalisé</span></div>
-              </div>
-
-              <div class="trust" style="border-color: rgba(201,162,79,.30);">
-                <strong>Note</strong> 4,8/5 • <span class="muted">retours clients (démo)</span> •
-                <strong>Livraison</strong> 48–72h
-              </div>
-            </div>
-
-            <div class="heroActions">
-              <a class="btn btn-primary" href="#buy">Commander maintenant</a>
-              <a class="btn" href="#match">Voir le match</a>
-            </div>
-
-            <p class="mini">
-              “Ce n’est pas une barre sucrée. C’est un <strong>protocole nutritionnel</strong> portable.”
-            </p>
-          </div>
-
-          <div class="heroMedia card">
-            <!-- Remplace par ton visuel PROTAMAX (macro barre coupée) -->
-            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1600&q=80"
-                 alt="Macro barre premium coupée en deux, texture cookie dough"/>
-            <div class="overlay"></div>
-          </div>
-        </div>
-
-        <!-- BUY (above the fold) -->
-        <div id="buy" class="card buyCard" style="margin-top:18px;">
-          <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:flex-end;">
-            <div>
-              <h2 style="margin-bottom:4px;">Choisis ton pack.</h2>
-              <p class="muted">Paiement sécurisé • Expédition 48–72h • Support email</p>
-            </div>
-            <div class="pill"><span class="dot"></span> Pack Performance = Livraison OFFERTE</div>
-          </div>
-
-          <div class="select" id="packSelect">
-            <div class="opt active" data-pack="decouverte">
-              <div class="left">
-                <div class="title">Pack Découverte (6 barres)</div>
-                <div class="sub">Idéal pour tester les 3 signatures • QR suivi inclus</div>
-              </div>
-              <div class="price">25,80 €</div>
-            </div>
-
-            <div class="opt" data-pack="performance">
-              <div class="left">
-                <div class="title">Pack Performance (12 barres)</div>
-                <div class="sub">Livraison OFFERTE • Bilan micronutritionnel inclus • routine 30 jours</div>
-              </div>
-              <div class="price">48,00 €</div>
-            </div>
-          </div>
-
-          <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:12px;">
-            <button class="btn btn-primary" id="buyBtn">Ajouter au panier</button>
-            <span class="mini" id="buyHint">Tu as sélectionné : Pack Découverte</span>
-          </div>
-        </div>
+  <main class="wrap">
+    <!-- PAGE: BARRES -->
+    <section id="page-bars">
+      <div class="headline">
+        <div class="ghostWord">Barres-repas.</div>
+        <h1>Barres-repas.</h1>
+        <div class="sub">Protéine noble. Énergie durable.</div>
+        <p class="intro">
+          3 recettes de barres-repas <strong>100g</strong> élaborées pour une énergie stable.
+          <strong>+26g de protéines</strong>, zéro additif, texture gastronomique.
+        </p>
       </div>
+
+      <div class="grid">
+        <!-- Product 1 -->
+        <article class="card">
+          <div class="media">
+            <!-- PROTAMAX packshot (SVG) -->
+            <svg width="420" height="260" viewBox="0 0 420 260" aria-label="PROTAMAX L'Originale">
+              <defs>
+                <linearGradient id="g1" x1="0" x2="1">
+                  <stop offset="0" stop-color="#1A2F23"/>
+                  <stop offset="1" stop-color="#0f1e16"/>
+                </linearGradient>
+              </defs>
+              <rect x="40" y="40" width="340" height="180" rx="26" fill="url(#g1)" opacity="0.10"/>
+              <rect x="120" y="70" width="200" height="120" rx="18" fill="#fff" stroke="rgba(26,47,35,.18)"/>
+              <rect x="120" y="70" width="200" height="28" rx="18" fill="#1A2F23"/>
+              <text x="220" y="90" text-anchor="middle" font-family="Inter" font-size="12" font-weight="900" fill="#F5F2ED" letter-spacing="2">PROTAMAX</text>
+              <text x="220" y="132" text-anchor="middle" font-family="Fraunces" font-size="20" font-weight="700" fill="#1A2F23">L’Originale</text>
+              <text x="220" y="154" text-anchor="middle" font-family="Inter" font-size="12" font-weight="700" fill="rgba(26,47,35,.72)">Choco-Noisette</text>
+              <circle cx="292" cy="162" r="20" fill="rgba(201,162,79,.18)" stroke="rgba(201,162,79,.45)"/>
+              <text x="292" y="167" text-anchor="middle" font-family="Inter" font-size="10" font-weight="900" fill="#1A2F23">26g+</text>
+            </svg>
+          </div>
+          <div class="cardBody">
+            <div class="badgeRow">
+              <span class="badge">Repas protéiné.</span>
+              <span class="badge gold">Best-seller.</span>
+            </div>
+            <h2 class="prodTitle">L’Originale. Choco-Noisette.</h2>
+            <div class="price">25,80 €</div>
+            <div class="meta">Vendu par 6 • Pack Découverte</div>
+            <div class="ctaRow">
+              <button class="btn primary" onclick="goPacks('decouverte')">Commander</button>
+              <button class="btn" onclick="jump('#info')">Voir Avantages</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 2 -->
+        <article class="card">
+          <div class="media">
+            <svg width="420" height="260" viewBox="0 0 420 260" aria-label="PROTAMAX Salty Peanut">
+              <defs>
+                <linearGradient id="g2" x1="0" x2="1">
+                  <stop offset="0" stop-color="#B07A3A"/>
+                  <stop offset="1" stop-color="#C9A24F"/>
+                </linearGradient>
+              </defs>
+              <rect x="40" y="40" width="340" height="180" rx="26" fill="url(#g2)" opacity="0.14"/>
+              <rect x="120" y="70" width="200" height="120" rx="18" fill="#fff" stroke="rgba(26,47,35,.18)"/>
+              <rect x="120" y="70" width="200" height="28" rx="18" fill="#1A2F23"/>
+              <text x="220" y="90" text-anchor="middle" font-family="Inter" font-size="12" font-weight="900" fill="#F5F2ED" letter-spacing="2">PROTAMAX</text>
+              <text x="220" y="132" text-anchor="middle" font-family="Fraunces" font-size="20" font-weight="700" fill="#1A2F23">Salty Peanut</text>
+              <text x="220" y="154" text-anchor="middle" font-family="Inter" font-size="12" font-weight="700" fill="rgba(26,47,35,.72)">Caramel salé</text>
+              <circle cx="292" cy="162" r="20" fill="rgba(176,122,58,.18)" stroke="rgba(176,122,58,.45)"/>
+              <text x="292" y="167" text-anchor="middle" font-family="Inter" font-size="10" font-weight="900" fill="#1A2F23">IG bas</text>
+            </svg>
+          </div>
+          <div class="cardBody">
+            <div class="badgeRow">
+              <span class="badge">Repas protéiné.</span>
+              <span class="badge">Recovery.</span>
+            </div>
+            <h2 class="prodTitle">Salty Peanut. Caramel salé.</h2>
+            <div class="price">25,80 €</div>
+            <div class="meta">Vendu par 6 • Pack Découverte</div>
+            <div class="ctaRow">
+              <button class="btn primary" onclick="goPacks('decouverte')">Commander</button>
+              <button class="btn" onclick="jump('#info')">Voir Ingrédients</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 3 -->
+        <article class="card">
+          <div class="media">
+            <svg width="420" height="260" viewBox="0 0 420 260" aria-label="PROTAMAX Red Berry">
+              <defs>
+                <linearGradient id="g3" x1="0" x2="1">
+                  <stop offset="0" stop-color="#7b1f2a"/>
+                  <stop offset="1" stop-color="#1A2F23"/>
+                </linearGradient>
+              </defs>
+              <rect x="40" y="40" width="340" height="180" rx="26" fill="url(#g3)" opacity="0.12"/>
+              <rect x="120" y="70" width="200" height="120" rx="18" fill="#fff" stroke="rgba(26,47,35,.18)"/>
+              <rect x="120" y="70" width="200" height="28" rx="18" fill="#1A2F23"/>
+              <text x="220" y="90" text-anchor="middle" font-family="Inter" font-size="12" font-weight="900" fill="#F5F2ED" letter-spacing="2">PROTAMAX</text>
+              <text x="220" y="132" text-anchor="middle" font-family="Fraunces" font-size="20" font-weight="700" fill="#1A2F23">Red Berry</text>
+              <text x="220" y="154" text-anchor="middle" font-family="Inter" font-size="12" font-weight="700" fill="rgba(26,47,35,.72)">Amande • fruits rouges</text>
+              <circle cx="292" cy="162" r="20" fill="rgba(123,31,42,.14)" stroke="rgba(123,31,42,.35)"/>
+              <text x="292" y="167" text-anchor="middle" font-family="Inter" font-size="10" font-weight="900" fill="#1A2F23">4h</text>
+            </svg>
+          </div>
+          <div class="cardBody">
+            <div class="badgeRow">
+              <span class="badge">Repas protéiné.</span>
+              <span class="badge">Light.</span>
+            </div>
+            <h2 class="prodTitle">Red Berry. Amande. Fruits rouges.</h2>
+            <div class="price">25,80 €</div>
+            <div class="meta">Vendu par 6 • Pack Découverte</div>
+            <div class="ctaRow">
+              <button class="btn primary" onclick="goPacks('decouverte')">Commander</button>
+              <button class="btn" onclick="jump('#info')">Voir Utilisation</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 4 (Pack Performance teaser) -->
+        <article class="card">
+          <div class="media">
+            <svg width="420" height="260" viewBox="0 0 420 260" aria-label="PROTAMAX Pack Performance">
+              <defs>
+                <linearGradient id="g4" x1="0" x2="1">
+                  <stop offset="0" stop-color="#1A2F23"/>
+                  <stop offset="1" stop-color="#C9A24F"/>
+                </linearGradient>
+              </defs>
+              <rect x="55" y="50" width="310" height="160" rx="26" fill="url(#g4)" opacity="0.12"/>
+              <rect x="105" y="76" width="210" height="108" rx="20" fill="#fff" stroke="rgba(26,47,35,.18)"/>
+              <text x="210" y="118" text-anchor="middle" font-family="Fraunces" font-size="24" font-weight="700" fill="#1A2F23">Pack Performance</text>
+              <text x="210" y="142" text-anchor="middle" font-family="Inter" font-size="12" font-weight="800" fill="rgba(26,47,35,.70)">12 barres • livraison OFFERTE</text>
+              <circle cx="318" cy="162" r="22" fill="rgba(201,162,79,.18)" stroke="rgba(201,162,79,.45)"/>
+              <text x="318" y="167" text-anchor="middle" font-family="Inter" font-size="10" font-weight="900" fill="#1A2F23">B12</text>
+            </svg>
+          </div>
+          <div class="cardBody">
+            <div class="badgeRow">
+              <span class="badge gold">Pack.</span>
+              <span class="badge">Livraison offerte.</span>
+            </div>
+            <h2 class="prodTitle">Pack Performance.</h2>
+            <div class="price">48,00 €</div>
+            <div class="meta">12 barres • Bilan micronutritionnel inclus</div>
+            <div class="ctaRow">
+              <button class="btn primary" onclick="goPacks('performance')">Commander</button>
+              <button class="btn" onclick="jump('#match')">Voir comparaison</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Info slider -->
+      <section class="info" id="info">
+        <div class="infoTabs">
+          <div class="infoTab active" data-info="a">Avantages.</div>
+          <div class="infoTab" data-info="b">Ingrédients.</div>
+          <div class="infoTab" data-info="c">Utilisation.</div>
+        </div>
+
+        <div class="infoStage">
+          <svg class="stageArt" id="stageArt" viewBox="0 0 560 220" aria-hidden="true">
+            <g fill="none" stroke="rgba(26,47,35,.9)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M280 20l90 40v55c0 55-35 85-90 100-55-15-90-45-90-100V60l90-40Z"/>
+              <path d="M235 110l30 30 60-70"/>
+            </g>
+          </svg>
+
+          <div class="stageTitle" id="stageTitle">Très riche en protéines.</div>
+          <div class="stageText" id="stageText">
+            +26g de protéines par barre (100g), énergie stable et <strong>satiété ~4h</strong>.
+            Densité micronutritionnelle (Fer, B12, Magnésium) sans additifs.
+          </div>
+        </div>
+      </section>
     </section>
 
-    <!-- OKR -->
-    <section id="okr">
-      <div class="wrap">
-        <h2>La Trilogie OKR.</h2>
-        <p class="muted">Avantages. Ingrédients. Utilisation. Trois preuves. Zéro blabla.</p>
-
-        <div class="okrGrid">
-          <div class="okr">
-            <div class="okrTop">
-              <div class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M12 2l7 4v6c0 5-3 9-7 10-4-1-7-5-7-10V6l7-4Z" stroke-width="1.8"/><path d="M9.5 12l1.8 1.8L15 10" stroke-width="1.8"/></svg>
-              </div>
-              <h3>Avantages</h3>
-              <span class="pill"><span class="dot"></span> Densité</span>
-            </div>
-            <ul>
-              <li><strong>Fer</strong> & <strong>B12</strong> : focus micronutrition</li>
-              <li><strong>Satiété ~4h</strong> : densité + fibres</li>
-              <li><strong>IG bas</strong> : énergie stable</li>
-            </ul>
-          </div>
-
-          <div class="okr">
-            <div class="okrTop">
-              <div class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M12 21s7-4.4 7-11a7 7 0 0 0-14 0c0 6.6 7 11 7 11Z" stroke-width="1.8"/><path d="M9.2 10.2c1.2-2 3.3-3.3 5.6-3.6-0.4 2.5-1.8 4.8-4.1 6.1" stroke-width="1.8"/></svg>
-              </div>
-              <h3>Ingrédients</h3>
-              <span class="pill"><span class="dot"></span> Clean label</span>
-            </div>
-            <ul>
-              <li>Farine de <strong>Ténébrion Molitor</strong> (UE)</li>
-              <li>Isolat de pois • Purée d’amande</li>
-              <li>Sirop de tapioca • Sans additifs</li>
-            </ul>
-          </div>
-
-          <div class="okr">
-            <div class="okrTop">
-              <div class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M4 19h16" stroke-width="1.8"/><path d="M7 16l3-7 4 4 3-9" stroke-width="1.8"/></svg>
-              </div>
-              <h3>Utilisation</h3>
-              <span class="pill"><span class="dot"></span> Protocole</span>
-            </div>
-            <ul>
-              <li>Post-workout intense</li>
-              <li>Déjeuner d’affaires nomade</li>
-              <li>Bio-hacking de performance</li>
-            </ul>
-          </div>
-        </div>
+    <!-- PAGE: PACKS -->
+    <section id="page-packs" style="display:none;">
+      <div class="headline">
+        <div class="ghostWord">Packs.</div>
+        <h1 class="packsTitle">Packs.</h1>
+        <div class="packsSub">Économiques et pratiques.</div>
+        <p class="intro">
+          Deux packs. Deux usages. Une même exigence : <strong>clean label</strong>, <strong>énergie durable</strong>, <strong>QR suivi</strong>.
+        </p>
       </div>
-    </section>
 
-    <!-- SIGNATURES -->
-    <section id="signatures">
-      <div class="wrap">
-        <h2>Nos 3 Signatures.</h2>
-        <p class="muted">Gastronomiques. Denses. Désirables.</p>
+      <div class="packsGrid">
+        <article class="card">
+          <div class="media">
+            <svg width="520" height="240" viewBox="0 0 520 240" aria-label="Pack Découverte">
+              <rect x="30" y="40" width="460" height="160" rx="28" fill="rgba(26,47,35,.06)"/>
+              <text x="260" y="110" text-anchor="middle" font-family="Fraunces" font-size="34" font-weight="700" fill="#1A2F23">Pack Découverte</text>
+              <text x="260" y="138" text-anchor="middle" font-family="Inter" font-size="13" font-weight="900" fill="rgba(26,47,35,.70)">6 barres • idéal pour tester</text>
+              <circle cx="420" cy="160" r="28" fill="rgba(201,162,79,.18)" stroke="rgba(201,162,79,.45)"/>
+              <text x="420" y="166" text-anchor="middle" font-family="Inter" font-size="12" font-weight="900" fill="#1A2F23">QR</text>
+            </svg>
+          </div>
+          <div class="cardBody">
+            <div class="badgeRow">
+              <span class="badge">Personnalisé.</span>
+              <span class="badge">Test.</span>
+            </div>
+            <h2 class="prodTitle">Pack Découverte.</h2>
+            <div class="price">25,80 €</div>
+            <div class="meta">6 barres • accès QR suivi personnalisé</div>
+            <div class="ctaRow">
+              <button class="btn primary" onclick="alert('Démo checkout : Pack Découverte. (En prod : Shopify/Stripe)')">Commander</button>
+            </div>
+          </div>
+        </article>
 
-        <div class="prodGrid">
-          <article class="prod">
-            <div class="prodMedia">
-              <img src="https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=1600&q=80" alt="Choco Noisette"/>
+        <article class="card">
+          <div class="media">
+            <svg width="520" height="240" viewBox="0 0 520 240" aria-label="Pack Performance">
+              <rect x="30" y="40" width="460" height="160" rx="28" fill="rgba(201,162,79,.10)"/>
+              <text x="260" y="110" text-anchor="middle" font-family="Fraunces" font-size="34" font-weight="700" fill="#1A2F23">Pack Performance</text>
+              <text x="260" y="138" text-anchor="middle" font-family="Inter" font-size="13" font-weight="900" fill="rgba(26,47,35,.70)">12 barres • livraison OFFERTE</text>
+              <circle cx="420" cy="160" r="28" fill="rgba(26,47,35,.10)" stroke="rgba(26,47,35,.28)"/>
+              <text x="420" y="166" text-anchor="middle" font-family="Inter" font-size="12" font-weight="900" fill="#1A2F23">B12</text>
+            </svg>
+          </div>
+          <div class="cardBody">
+            <div class="badgeRow">
+              <span class="badge gold">Best-value.</span>
+              <span class="badge">Livraison offerte.</span>
             </div>
-            <div class="prodBody">
-              <h3>L’Originale — <span class="muted">Choco-Noisette</span></h3>
-              <p><strong>Le classique gourmand.</strong> Intensité cacao et éclats de noisettes grillées.</p>
+            <h2 class="prodTitle">Pack Performance.</h2>
+            <div class="price">48,00 €</div>
+            <div class="meta">12 barres • bilan micronutritionnel inclus</div>
+            <div class="ctaRow">
+              <button class="btn primary" onclick="alert('Démo checkout : Pack Performance. (En prod : Shopify/Stripe)')">Commander</button>
             </div>
-          </article>
-
-          <article class="prod">
-            <div class="prodMedia">
-              <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=1600&q=80" alt="Salty Peanut"/>
-            </div>
-            <div class="prodBody">
-              <h3>Le Salty Peanut — <span class="muted">Caramel salé</span></h3>
-              <p><strong>Puissance & récupération.</strong> Beurre de cacahuète onctueux, pointe de sel.</p>
-            </div>
-          </article>
-
-          <article class="prod">
-            <div class="prodMedia">
-              <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=1600&q=80" alt="Red Berry"/>
-            </div>
-            <div class="prodBody">
-              <h3>Le Red Berry — <span class="muted">Amande & fruits rouges</span></h3>
-              <p><strong>Fraîcheur & légèreté.</strong> Amande blanche, cranberries acidulées.</p>
-            </div>
-          </article>
-        </div>
+          </div>
+        </article>
       </div>
-    </section>
 
-    <!-- PROOF -->
-    <section id="preuves">
-      <div class="wrap">
-        <h2>Le Mur des Preuves.</h2>
-        <p class="muted">Adopté par des lieux où performance et esthétique comptent.</p>
+      <!-- Proof + match (minimal) -->
+      <section class="proof">
+        <h2 style="font-family:var(--serif); font-size: 38px; margin:0;">Preuves.</h2>
+        <p class="intro" style="margin-top:10px;">
+          Développé avec des experts en nutrition médicale pour cibler des carences fréquentes en <strong>Fer</strong> et <strong>B12</strong>.
+        </p>
 
         <div class="logos">
-          <div class="logo">Blanche Paris</div>
-          <div class="logo">Le Klay</div>
-          <div class="logo">Reformation Pilates</div>
+          <div class="logoCard">Blanche Paris</div>
+          <div class="logoCard">Le Klay</div>
+          <div class="logoCard">Reformation Pilates</div>
         </div>
 
-        <div class="twoCol">
+        <div class="twoCol" style="margin-top:16px;">
           <div class="box">
-            <h3>Développé avec expertise</h3>
-            <p class="muted" style="margin-top:8px;">
-              Développé avec des experts en nutrition médicale pour cibler des carences fréquentes :
-              <strong>Fer</strong> & <strong>B12</strong>. Une barre pensée pour “tenir”.
+            <h3 style="margin:0 0 8px; font-family:var(--serif);">QR Code.</h3>
+            <p style="margin:0; color: rgba(26,47,35,.72); line-height:1.65;">
+              Chaque barre contient un QR code pour accéder à un programme de suivi personnalisé :
+              routine, recommandations, suivi 30 jours.
             </p>
-            <div style="margin-top:12px;" class="pill"><span class="dot"></span> Scientifique, accessible, concret</div>
           </div>
-
-          <div class="box">
-            <h3>Communauté TikTok</h3>
-            <p class="muted" style="margin-top:8px;">
-              Ici tu peux intégrer le widget TikTok de <strong>@TonCompte</strong> (preuves, dégustations, routines).
-            </p>
-            <div style="margin-top:12px;" class="pill"><span class="dot"></span> ~300k vues/mois (démo)</div>
+          <div class="tiktok">
+            <div>
+              <strong>TikTok widget</strong><br/>
+              <span style="font-size:13px;">Colle ici l’embed de @TonCompte</span>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- MATCH -->
-    <section id="match">
-      <div class="wrap">
-        <h2>Comparaison Radicale.</h2>
-        <p class="muted">Un tableau. Deux philosophies.</p>
+        <div id="match" style="margin-top:18px;">
+          <h3 style="margin:0; font-family:var(--serif); font-size: 30px;">Comparaison.</h3>
 
-        <table>
-          <thead>
-            <tr>
-              <th>Critère</th>
-              <th>PROTAMAX (100g)</th>
-              <th>Barre muscu classique</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Protéines</strong></td>
-              <td class="good">26g nobles</td>
-              <td class="bad">15–20g isolats</td>
-            </tr>
-            <tr>
-              <td><strong>B12</strong></td>
-              <td class="good">Présente (naturelle)</td>
-              <td class="bad">Rare / ajout synthétique</td>
-            </tr>
-            <tr>
-              <td><strong>Fer</strong></td>
-              <td class="good">Densité micronutritionnelle</td>
-              <td class="bad">Faible</td>
-            </tr>
-            <tr>
-              <td><strong>Additifs</strong></td>
-              <td class="good">Zéro</td>
-              <td class="bad"><span class="strike">Sucralose</span>, maltitol, gélatine…</td>
-            </tr>
-            <tr>
-              <td><strong>Digestion</strong></td>
-              <td class="good">Stable</td>
-              <td class="bad">Ballonnements fréquents</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq">
-      <div class="wrap">
-        <h2>FAQ.</h2>
-        <p class="muted">Réponses simples. Ton sophistiqué. Zéro malaise.</p>
-
-        <div class="faq">
-          <details open>
-            <summary>“Protéine entomologique noble” — ça veut dire quoi ?</summary>
-            <p>Une source protéique premium issue du <strong>Ténébrion Molitor</strong>, sélectionnée pour sa densité nutritionnelle et son efficacité planétaire.</p>
-          </details>
-          <details>
-            <summary>Est-ce que c’est sucré comme une barre classique ?</summary>
-            <p>Non. PROTAMAX vise une <strong>énergie stable</strong> (IG bas) et une <strong>satiété longue</strong>, sans édulcorants agressifs.</p>
-          </details>
-          <details>
-            <summary>Le QR code sert à quoi ?</summary>
-            <p>Chaque barre donne accès à un <strong>programme de suivi</strong> : routine 30 jours, recommandations, tableau micronutritionnel.</p>
-          </details>
-          <details>
-            <summary>Livraison et paiement ?</summary>
-            <p>Paiement sécurisé. Expédition 48–72h. Le Pack Performance inclut la <strong>livraison offerte</strong>.</p>
-          </details>
+          <table>
+            <thead>
+              <tr>
+                <th>Critère</th>
+                <th>PROTAMAX</th>
+                <th>Barre classique</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Protéines</strong></td>
+                <td class="good">26g nobles</td>
+                <td class="bad">15–20g</td>
+              </tr>
+              <tr>
+                <td><strong>B12</strong></td>
+                <td class="good">Présente (naturelle)</td>
+                <td class="bad">Rare / ajout</td>
+              </tr>
+              <tr>
+                <td><strong>Fer</strong></td>
+                <td class="good">Densité micronutritionnelle</td>
+                <td class="bad">Faible</td>
+              </tr>
+              <tr>
+                <td><strong>Additifs</strong></td>
+                <td class="good">Zéro</td>
+                <td class="bad"><span class="strike">Sucralose</span>, maltitol…</td>
+              </tr>
+              <tr>
+                <td><strong>Digestion</strong></td>
+                <td class="good">Stable</td>
+                <td class="bad">Ballonnements</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </div>
+      </section>
     </section>
 
     <footer>
-      <div class="wrap">
-        <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
-          <div class="mark" aria-hidden="true"></div>
-          <div>
-            <div class="brandName">PROTAMAX</div>
-            <p class="muted" style="font-size:12px;">DTC Luxury Food — Minimalisme radical • Masstige nature</p>
-          </div>
-        </div>
-        <p class="muted" style="font-size:12px; margin-top:14px;">
-          Note : les valeurs nutritionnelles finales (Fer/B12/etc.) doivent être confirmées par analyses et étiquetage UE.
-        </p>
-      </div>
+      © <span id="year"></span> PROTAMAX — Masstige • minimalisme radical • efficacité durable.
     </footer>
   </main>
 
-  <!-- Sticky buy bar -->
-  <div class="sticky" aria-label="Barre d’achat">
-    <div class="inner">
-      <div class="left">
-        <div class="name" id="stickyName">Pack Découverte (6 barres)</div>
-        <div class="sub">+26g protéines • Zéro additif • QR suivi</div>
-      </div>
-      <div style="display:flex; gap:10px; align-items:center;">
-        <div class="price" id="stickyPrice">25,80 €</div>
-        <button class="btn btn-primary" id="stickyBuy">Ajouter</button>
-      </div>
-    </div>
-  </div>
-
   <script>
-    const packs = {
-      decouverte: { name: "Pack Découverte (6 barres)", price: "25,80 €" },
-      performance: { name: "Pack Performance (12 barres)", price: "48,00 €" }
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Tabs: Barres / Packs
+    const tabs = [...document.querySelectorAll(".tab")];
+    const pageBars = document.getElementById("page-bars");
+    const pagePacks = document.getElementById("page-packs");
+
+    tabs.forEach(t => t.addEventListener("click", () => {
+      tabs.forEach(x => x.classList.remove("active"));
+      t.classList.add("active");
+
+      const page = t.dataset.page;
+      if(page === "bars"){
+        pageBars.style.display = "";
+        pagePacks.style.display = "none";
+        window.scrollTo({top:0, behavior:"smooth"});
+      } else {
+        pageBars.style.display = "none";
+        pagePacks.style.display = "";
+        window.scrollTo({top:0, behavior:"smooth"});
+      }
+    }));
+
+    // Info slider: Avantages / Ingrédients / Utilisation
+    const infoTabs = [...document.querySelectorAll(".infoTab")];
+    const stageTitle = document.getElementById("stageTitle");
+    const stageText  = document.getElementById("stageText");
+    const stageArt   = document.getElementById("stageArt");
+
+    const ART = {
+      a: `<g fill="none" stroke="rgba(26,47,35,.9)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M280 20l90 40v55c0 55-35 85-90 100-55-15-90-45-90-100V60l90-40Z"/>
+            <path d="M235 110l30 30 60-70"/>
+          </g>`,
+      b: `<g fill="none" stroke="rgba(26,47,35,.9)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M280 30c-40 22-62 52-62 82 0 42 36 78 62 90 26-12 62-48 62-90 0-30-22-60-62-82Z"/>
+            <path d="M255 120c20-12 36-32 42-56"/>
+          </g>`,
+      c: `<g fill="none" stroke="rgba(26,47,35,.9)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M140 170h280"/>
+            <path d="M190 150l40-70 50 55 50-95"/>
+            <path d="M205 78h0"/>
+          </g>`
     };
 
-    let selected = "decouverte";
-    const opts = [...document.querySelectorAll(".opt")];
+    const CONTENT = {
+      a: {
+        title: "Très riche en protéines.",
+        text: "+26g de protéines par barre (100g), énergie stable et satiété ~4h. Densité micronutritionnelle (Fer, B12, Magnésium) sans additifs."
+      },
+      b: {
+        title: "Clean label court.",
+        text: "Farine de Ténébrion Molitor (UE), isolat de pois, purée d’amande, sirop de tapioca. Une liste courte. Transparente."
+      },
+      c: {
+        title: "Utilisation simple.",
+        text: "Post-workout intense, déjeuner d’affaires nomade, bio-hacking de performance. Une barre = un repas portable."
+      }
+    };
 
-    const hint = document.getElementById("buyHint");
-    const stickyName = document.getElementById("stickyName");
-    const stickyPrice = document.getElementById("stickyPrice");
-
-    function setPack(id){
-      selected = id;
-      opts.forEach(o => o.classList.toggle("active", o.dataset.pack === id));
-      hint.textContent = "Tu as sélectionné : " + packs[id].name;
-      stickyName.textContent = packs[id].name;
-      stickyPrice.textContent = packs[id].price;
+    function setInfo(key){
+      infoTabs.forEach(t => t.classList.toggle("active", t.dataset.info === key));
+      stageTitle.textContent = CONTENT[key].title;
+      stageText.textContent  = CONTENT[key].text;
+      stageArt.innerHTML = ART[key];
     }
+    infoTabs.forEach(t => t.addEventListener("click", () => setInfo(t.dataset.info)));
 
-    opts.forEach(o => o.addEventListener("click", () => setPack(o.dataset.pack)));
-
-    function buy(){
-      alert("Démo panier : " + packs[selected].name + " (" + packs[selected].price + ")\\n\\nEn production : Shopify Checkout / Stripe.");
+    // Helpers
+    function jump(sel){
+      const el = document.querySelector(sel);
+      if(el) el.scrollIntoView({behavior:"smooth", block:"start"});
     }
-    document.getElementById("buyBtn").addEventListener("click", buy);
-    document.getElementById("stickyBuy").addEventListener("click", buy);
+    window.jump = jump;
+
+    function goPacks(which){
+      // switch to PACKS tab
+      tabs.forEach(x => x.classList.remove("active"));
+      document.querySelector('.tab[data-page="packs"]').classList.add("active");
+      pageBars.style.display = "none";
+      pagePacks.style.display = "";
+      window.scrollTo({top:0, behavior:"smooth"});
+      if(which === "performance"){
+        setTimeout(()=> alert("Pack Performance (démo). En prod : Shopify/Stripe."), 400);
+      }
+    }
+    window.goPacks = goPacks;
   </script>
 </body>
 </html>
