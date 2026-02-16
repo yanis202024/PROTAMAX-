@@ -4,12 +4,12 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>PROTAMAX — Barres-repas 100g</title>
-  <meta name="description" content="PROTAMAX : barres-repas 100g. +26g protéines. Zéro additif. Texture gastronomique. Packs Découverte & Performance."/>
+  <meta name="description" content="PROTAMAX : barres-repas 100g. +26g protéines. Zéro additif. Texture cookie dough gastronomique. Packs Découverte & Performance."/>
   <meta name="theme-color" content="#1A2F23"/>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -41,11 +41,11 @@
     a{ color:inherit; text-decoration:none; }
     .wrap{ max-width: var(--max); margin:0 auto; padding: 0 18px; }
 
-    /* Announcement bar */
+    /* Announcement */
     .announce{
       background: var(--forest);
       color: #fff;
-      font-weight:700;
+      font-weight:900;
       font-size: 13px;
       letter-spacing:.2px;
       text-align:center;
@@ -55,7 +55,7 @@
     /* Header */
     .topbar{
       position: sticky; top:0; z-index:50;
-      background: rgba(255,255,255,.9);
+      background: rgba(255,255,255,.92);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--line);
     }
@@ -82,7 +82,7 @@
       font-size: 18px;
     }
 
-    /* Tabs */
+    /* Tabs (Barres / Packs) */
     .tabs{
       display:flex;
       gap: 22px;
@@ -91,7 +91,7 @@
       border-bottom: 1px solid var(--line);
     }
     .tab{
-      font-weight: 800;
+      font-weight: 900;
       letter-spacing:.2px;
       color: rgba(26,47,35,.55);
       padding-bottom: 10px;
@@ -135,13 +135,12 @@
       transform: translateY(12px);
       white-space:nowrap;
     }
-
     .intro{
       margin-top: 10px;
-      max-width: 62ch;
+      max-width: 70ch;
       color: rgba(26,47,35,.6);
       font-size: 15px;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     /* Product grid */
@@ -155,7 +154,6 @@
     @media (max-width: 920px){
       .grid{ grid-template-columns: 1fr; }
     }
-
     .card{
       border: 1px solid var(--line);
       border-radius: var(--r2);
@@ -164,11 +162,18 @@
     }
     .media{
       background: #fff;
-      padding: 18px 18px 0;
+      padding: 14px;
       min-height: 260px;
       display:flex;
       align-items:center;
       justify-content:center;
+    }
+    .media img{
+      width:100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid rgba(26,47,35,.08);
     }
     .cardBody{
       padding: 16px 18px 18px;
@@ -211,6 +216,7 @@
       margin-top: 10px;
       color: rgba(26,47,35,.6);
       font-size: 13px;
+      line-height:1.45;
     }
     .ctaRow{
       display:flex;
@@ -235,7 +241,7 @@
     }
     .btn.primary:hover{ background:#14251c; }
 
-    /* Info slider */
+    /* Info slider (Avantages/Ingrédients/Utilisation) */
     .info{
       padding: 26px 0 34px;
       border-top: 1px solid var(--line);
@@ -263,56 +269,61 @@
       color: var(--forest);
       border-bottom-color: var(--forest);
     }
-    .infoStage{
+    .stage{
       display:grid;
       place-items:center;
       text-align:center;
-      padding: 6px 0 0;
+      padding: 2px 0 0;
     }
     .stageTitle{
       font-weight: 900;
       letter-spacing:.6px;
       color: var(--forest);
       text-transform: uppercase;
-      margin-top: 10px;
+      margin-top: 8px;
     }
     .stageText{
-      max-width: 62ch;
+      max-width: 72ch;
       color: rgba(26,47,35,.72);
       margin-top: 10px;
       line-height: 1.65;
     }
-    .stageArt{
-      width: min(520px, 92vw);
-      margin: 6px auto 0;
+    .stageMiniGrid{
+      margin-top: 14px;
+      width: min(920px, 100%);
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      text-align:left;
     }
+    @media (max-width: 920px){
+      .stageMiniGrid{ grid-template-columns: 1fr; }
+    }
+    .miniCard{
+      border: 1px solid rgba(26,47,35,.14);
+      border-radius: 18px;
+      padding: 14px;
+      background: rgba(26,47,35,.02);
+    }
+    .miniCard strong{ color: rgba(26,47,35,.92); }
 
-    /* Packs */
-    .packsTitle{
-      font-family: var(--serif);
-      font-size: clamp(38px, 5vw, 64px);
-      margin: 0;
-    }
-    .packsSub{
-      color: rgba(26,47,35,.68);
-      font-size: 18px;
-      margin-top: 8px;
-    }
+    /* Packs page */
     .packsGrid{
       display:grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 16px;
       margin-top: 18px;
-      padding-bottom: 40px;
+      padding-bottom: 28px;
     }
     @media (max-width: 920px){
       .packsGrid{ grid-template-columns: 1fr; }
     }
 
-    /* Proof + comparison (minimal) */
+    /* Proof + match */
     .proof{
       border-top: 1px solid var(--line);
       padding: 26px 0 40px;
+      margin-top: 10px;
     }
     .logos{
       display:grid;
@@ -398,7 +409,7 @@
 </head>
 
 <body>
-  <div class="announce">👉 Pack Performance : Livraison OFFERTE + Bilan micronutritionnel inclus 👉</div>
+  <div class="announce">👉 +26g protéines • Zéro additif • Texture Cookie Dough • Packs 6 & 12 👉</div>
 
   <header class="topbar">
     <div class="wrap">
@@ -415,7 +426,7 @@
         <div class="logo">PROTAMAX</div>
 
         <div class="rightIcons">
-          <button class="iconBtn" aria-label="Panier" onclick="alert('Démo : panier (à brancher Shopify/Stripe)')">
+          <button class="iconBtn" aria-label="Panier" onclick="alert('Démo panier (à brancher Shopify/Stripe)')">
             <svg viewBox="0 0 24 24"><path d="M6 8h14l-1.5 13H7.5L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
           </button>
         </div>
@@ -436,32 +447,16 @@
         <h1>Barres-repas.</h1>
         <div class="sub">Protéine noble. Énergie durable.</div>
         <p class="intro">
-          3 recettes de barres-repas <strong>100g</strong> élaborées pour une énergie stable.
-          <strong>+26g de protéines</strong>, zéro additif, texture gastronomique.
+          Trois recettes “cookie dough” construites sur un <strong>Master Mix</strong> commun (70%) pour garantir
+          une qualité constante. Objectif : texture moelleuse, goût premium, et efficacité micronutritionnelle.
         </p>
       </div>
 
       <div class="grid">
-        <!-- Product 1 -->
+        <!-- Originale -->
         <article class="card">
           <div class="media">
-            <!-- PROTAMAX packshot (SVG) -->
-            <svg width="420" height="260" viewBox="0 0 420 260" aria-label="PROTAMAX L'Originale">
-              <defs>
-                <linearGradient id="g1" x1="0" x2="1">
-                  <stop offset="0" stop-color="#1A2F23"/>
-                  <stop offset="1" stop-color="#0f1e16"/>
-                </linearGradient>
-              </defs>
-              <rect x="40" y="40" width="340" height="180" rx="26" fill="url(#g1)" opacity="0.10"/>
-              <rect x="120" y="70" width="200" height="120" rx="18" fill="#fff" stroke="rgba(26,47,35,.18)"/>
-              <rect x="120" y="70" width="200" height="28" rx="18" fill="#1A2F23"/>
-              <text x="220" y="90" text-anchor="middle" font-family="Inter" font-size="12" font-weight="900" fill="#F5F2ED" letter-spacing="2">PROTAMAX</text>
-              <text x="220" y="132" text-anchor="middle" font-family="Fraunces" font-size="20" font-weight="700" fill="#1A2F23">L’Originale</text>
-              <text x="220" y="154" text-anchor="middle" font-family="Inter" font-size="12" font-weight="700" fill="rgba(26,47,35,.72)">Choco-Noisette</text>
-              <circle cx="292" cy="162" r="20" fill="rgba(201,162,79,.18)" stroke="rgba(201,162,79,.45)"/>
-              <text x="292" y="167" text-anchor="middle" font-family="Inter" font-size="10" font-weight="900" fill="#1A2F23">26g+</text>
-            </svg>
+            <img src="originale.jpg" alt="PROTAMAX L'Originale Choco-Noisette — barre coupée texture cookie dough">
           </div>
           <div class="cardBody">
             <div class="badgeRow">
@@ -470,113 +465,80 @@
             </div>
             <h2 class="prodTitle">L’Originale. Choco-Noisette.</h2>
             <div class="price">25,80 €</div>
-            <div class="meta">Vendu par 6 • Pack Découverte</div>
+            <div class="meta">
+              Profil brownie / pâte à tartiner. Cacao + noisette pour une gourmandise nette.
+              <br><strong>Recette</strong> : Ténébrion 22% • Pois 15% • Sirop fibres 20% • Noisette 8% • Choco + cacao • Enrobage noir.
+            </div>
             <div class="ctaRow">
               <button class="btn primary" onclick="goPacks('decouverte')">Commander</button>
-              <button class="btn" onclick="jump('#info')">Voir Avantages</button>
+              <button class="btn" onclick="jump('#info')">Avantages</button>
             </div>
           </div>
         </article>
 
-        <!-- Product 2 -->
+        <!-- Salty Peanut -->
         <article class="card">
           <div class="media">
-            <svg width="420" height="260" viewBox="0 0 420 260" aria-label="PROTAMAX Salty Peanut">
-              <defs>
-                <linearGradient id="g2" x1="0" x2="1">
-                  <stop offset="0" stop-color="#B07A3A"/>
-                  <stop offset="1" stop-color="#C9A24F"/>
-                </linearGradient>
-              </defs>
-              <rect x="40" y="40" width="340" height="180" rx="26" fill="url(#g2)" opacity="0.14"/>
-              <rect x="120" y="70" width="200" height="120" rx="18" fill="#fff" stroke="rgba(26,47,35,.18)"/>
-              <rect x="120" y="70" width="200" height="28" rx="18" fill="#1A2F23"/>
-              <text x="220" y="90" text-anchor="middle" font-family="Inter" font-size="12" font-weight="900" fill="#F5F2ED" letter-spacing="2">PROTAMAX</text>
-              <text x="220" y="132" text-anchor="middle" font-family="Fraunces" font-size="20" font-weight="700" fill="#1A2F23">Salty Peanut</text>
-              <text x="220" y="154" text-anchor="middle" font-family="Inter" font-size="12" font-weight="700" fill="rgba(26,47,35,.72)">Caramel salé</text>
-              <circle cx="292" cy="162" r="20" fill="rgba(176,122,58,.18)" stroke="rgba(176,122,58,.45)"/>
-              <text x="292" y="167" text-anchor="middle" font-family="Inter" font-size="10" font-weight="900" fill="#1A2F23">IG bas</text>
-            </svg>
+            <img src="saltypeanut.jpg" alt="PROTAMAX Salty Peanut Caramel salé — barre coupée texture cookie dough">
           </div>
           <div class="cardBody">
             <div class="badgeRow">
-              <span class="badge">Repas protéiné.</span>
+              <span class="badge">Sport.</span>
               <span class="badge">Recovery.</span>
             </div>
             <h2 class="prodTitle">Salty Peanut. Caramel salé.</h2>
             <div class="price">25,80 €</div>
-            <div class="meta">Vendu par 6 • Pack Découverte</div>
+            <div class="meta">
+              Profil “snack de récupération” : beurre de cacahuète + pointe de sel.
+              <br><strong>Recette</strong> : Ténébrion 22% • Pois 16% • Sirop fibres 21% • Beurre cacahuète 12% • éclats 8% • Enrobage lait.
+            </div>
             <div class="ctaRow">
               <button class="btn primary" onclick="goPacks('decouverte')">Commander</button>
-              <button class="btn" onclick="jump('#info')">Voir Ingrédients</button>
+              <button class="btn" onclick="setInfo('b'); jump('#info')">Ingrédients</button>
             </div>
           </div>
         </article>
 
-        <!-- Product 3 -->
+        <!-- Red Berry -->
         <article class="card">
           <div class="media">
-            <svg width="420" height="260" viewBox="0 0 420 260" aria-label="PROTAMAX Red Berry">
-              <defs>
-                <linearGradient id="g3" x1="0" x2="1">
-                  <stop offset="0" stop-color="#7b1f2a"/>
-                  <stop offset="1" stop-color="#1A2F23"/>
-                </linearGradient>
-              </defs>
-              <rect x="40" y="40" width="340" height="180" rx="26" fill="url(#g3)" opacity="0.12"/>
-              <rect x="120" y="70" width="200" height="120" rx="18" fill="#fff" stroke="rgba(26,47,35,.18)"/>
-              <rect x="120" y="70" width="200" height="28" rx="18" fill="#1A2F23"/>
-              <text x="220" y="90" text-anchor="middle" font-family="Inter" font-size="12" font-weight="900" fill="#F5F2ED" letter-spacing="2">PROTAMAX</text>
-              <text x="220" y="132" text-anchor="middle" font-family="Fraunces" font-size="20" font-weight="700" fill="#1A2F23">Red Berry</text>
-              <text x="220" y="154" text-anchor="middle" font-family="Inter" font-size="12" font-weight="700" fill="rgba(26,47,35,.72)">Amande • fruits rouges</text>
-              <circle cx="292" cy="162" r="20" fill="rgba(123,31,42,.14)" stroke="rgba(123,31,42,.35)"/>
-              <text x="292" y="167" text-anchor="middle" font-family="Inter" font-size="10" font-weight="900" fill="#1A2F23">4h</text>
-            </svg>
+            <img src="redberry.jpg" alt="PROTAMAX Red Berry Amande Fruits rouges — barre coupée texture cookie dough">
           </div>
           <div class="cardBody">
             <div class="badgeRow">
-              <span class="badge">Repas protéiné.</span>
+              <span class="badge">Wellness.</span>
               <span class="badge">Light.</span>
             </div>
             <h2 class="prodTitle">Red Berry. Amande. Fruits rouges.</h2>
             <div class="price">25,80 €</div>
-            <div class="meta">Vendu par 6 • Pack Découverte</div>
+            <div class="meta">
+              Profil “fraîcheur” : amande blanche + cranberries acidulées.
+              <br><strong>Recette</strong> : Ténébrion 22% • Pois 15% • Sirop fibres 20% • Purée amande 10% • cranberries 10% • choco blanc 8% (ou filet).
+            </div>
             <div class="ctaRow">
               <button class="btn primary" onclick="goPacks('decouverte')">Commander</button>
-              <button class="btn" onclick="jump('#info')">Voir Utilisation</button>
+              <button class="btn" onclick="setInfo('c'); jump('#info')">Utilisation</button>
             </div>
           </div>
         </article>
 
-        <!-- Product 4 (Pack Performance teaser) -->
+        <!-- Packs shortcut -->
         <article class="card">
-          <div class="media">
-            <svg width="420" height="260" viewBox="0 0 420 260" aria-label="PROTAMAX Pack Performance">
-              <defs>
-                <linearGradient id="g4" x1="0" x2="1">
-                  <stop offset="0" stop-color="#1A2F23"/>
-                  <stop offset="1" stop-color="#C9A24F"/>
-                </linearGradient>
-              </defs>
-              <rect x="55" y="50" width="310" height="160" rx="26" fill="url(#g4)" opacity="0.12"/>
-              <rect x="105" y="76" width="210" height="108" rx="20" fill="#fff" stroke="rgba(26,47,35,.18)"/>
-              <text x="210" y="118" text-anchor="middle" font-family="Fraunces" font-size="24" font-weight="700" fill="#1A2F23">Pack Performance</text>
-              <text x="210" y="142" text-anchor="middle" font-family="Inter" font-size="12" font-weight="800" fill="rgba(26,47,35,.70)">12 barres • livraison OFFERTE</text>
-              <circle cx="318" cy="162" r="22" fill="rgba(201,162,79,.18)" stroke="rgba(201,162,79,.45)"/>
-              <text x="318" y="167" text-anchor="middle" font-family="Inter" font-size="10" font-weight="900" fill="#1A2F23">B12</text>
-            </svg>
+          <div class="media" style="min-height:260px;">
+            <img src="originale.jpg" alt="PROTAMAX packs" style="filter:saturate(.9) contrast(1.02);">
           </div>
           <div class="cardBody">
             <div class="badgeRow">
-              <span class="badge gold">Pack.</span>
-              <span class="badge">Livraison offerte.</span>
+              <span class="badge gold">Packs.</span>
+              <span class="badge">QR Suivi.</span>
             </div>
-            <h2 class="prodTitle">Pack Performance.</h2>
-            <div class="price">48,00 €</div>
-            <div class="meta">12 barres • Bilan micronutritionnel inclus</div>
+            <h2 class="prodTitle">Deux packs. Un protocole.</h2>
+            <div class="meta">
+              Chaque barre contient un QR code : programme de suivi personnalisé (routine, recommandations, 30 jours).
+            </div>
             <div class="ctaRow">
-              <button class="btn primary" onclick="goPacks('performance')">Commander</button>
-              <button class="btn" onclick="jump('#match')">Voir comparaison</button>
+              <button class="btn primary" onclick="goPacks('performance')">Voir packs</button>
+              <button class="btn" onclick="jump('#match')">Comparer</button>
             </div>
           </div>
         </article>
@@ -590,19 +552,14 @@
           <div class="infoTab" data-info="c">Utilisation.</div>
         </div>
 
-        <div class="infoStage">
-          <svg class="stageArt" id="stageArt" viewBox="0 0 560 220" aria-hidden="true">
-            <g fill="none" stroke="rgba(26,47,35,.9)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M280 20l90 40v55c0 55-35 85-90 100-55-15-90-45-90-100V60l90-40Z"/>
-              <path d="M235 110l30 30 60-70"/>
-            </g>
-          </svg>
-
-          <div class="stageTitle" id="stageTitle">Très riche en protéines.</div>
+        <div class="stage">
+          <div class="stageTitle" id="stageTitle">Densité micronutritionnelle.</div>
           <div class="stageText" id="stageText">
-            +26g de protéines par barre (100g), énergie stable et <strong>satiété ~4h</strong>.
-            Densité micronutritionnelle (Fer, B12, Magnésium) sans additifs.
+            Fer, B12, magnésium : un avantage rare face aux barres “whey” souvent supplémentées chimiquement.
+            Satiété ~4h grâce aux fibres et à l’architecture cookie dough.
           </div>
+
+          <div class="stageMiniGrid" id="stageMiniGrid"></div>
         </div>
       </section>
     </section>
@@ -611,68 +568,57 @@
     <section id="page-packs" style="display:none;">
       <div class="headline">
         <div class="ghostWord">Packs.</div>
-        <h1 class="packsTitle">Packs.</h1>
-        <div class="packsSub">Économiques et pratiques.</div>
+        <h1>Packs.</h1>
+        <div class="sub">Économiques et pratiques.</div>
         <p class="intro">
-          Deux packs. Deux usages. Une même exigence : <strong>clean label</strong>, <strong>énergie durable</strong>, <strong>QR suivi</strong>.
+          Pack Découverte pour tester. Pack Performance pour tenir la routine. Les recettes sont construites sur le
+          <strong>Master Mix</strong> (70%) : Ténébrion + pois, sirop de fibres, glycérine végétale, crisps de pois.
         </p>
       </div>
 
       <div class="packsGrid">
         <article class="card">
           <div class="media">
-            <svg width="520" height="240" viewBox="0 0 520 240" aria-label="Pack Découverte">
-              <rect x="30" y="40" width="460" height="160" rx="28" fill="rgba(26,47,35,.06)"/>
-              <text x="260" y="110" text-anchor="middle" font-family="Fraunces" font-size="34" font-weight="700" fill="#1A2F23">Pack Découverte</text>
-              <text x="260" y="138" text-anchor="middle" font-family="Inter" font-size="13" font-weight="900" fill="rgba(26,47,35,.70)">6 barres • idéal pour tester</text>
-              <circle cx="420" cy="160" r="28" fill="rgba(201,162,79,.18)" stroke="rgba(201,162,79,.45)"/>
-              <text x="420" y="166" text-anchor="middle" font-family="Inter" font-size="12" font-weight="900" fill="#1A2F23">QR</text>
-            </svg>
+            <img src="originale.jpg" alt="Pack Découverte PROTAMAX">
           </div>
           <div class="cardBody">
             <div class="badgeRow">
-              <span class="badge">Personnalisé.</span>
+              <span class="badge">Pack.</span>
               <span class="badge">Test.</span>
             </div>
-            <h2 class="prodTitle">Pack Découverte.</h2>
+            <h2 class="prodTitle">Pack Découverte (6 barres).</h2>
             <div class="price">25,80 €</div>
-            <div class="meta">6 barres • accès QR suivi personnalisé</div>
+            <div class="meta">Idéal pour tester les 3 signatures. QR suivi inclus.</div>
             <div class="ctaRow">
-              <button class="btn primary" onclick="alert('Démo checkout : Pack Découverte. (En prod : Shopify/Stripe)')">Commander</button>
+              <button class="btn primary" onclick="alert('Démo checkout : Pack Découverte (à brancher Shopify/Stripe).')">Commander</button>
             </div>
           </div>
         </article>
 
         <article class="card">
           <div class="media">
-            <svg width="520" height="240" viewBox="0 0 520 240" aria-label="Pack Performance">
-              <rect x="30" y="40" width="460" height="160" rx="28" fill="rgba(201,162,79,.10)"/>
-              <text x="260" y="110" text-anchor="middle" font-family="Fraunces" font-size="34" font-weight="700" fill="#1A2F23">Pack Performance</text>
-              <text x="260" y="138" text-anchor="middle" font-family="Inter" font-size="13" font-weight="900" fill="rgba(26,47,35,.70)">12 barres • livraison OFFERTE</text>
-              <circle cx="420" cy="160" r="28" fill="rgba(26,47,35,.10)" stroke="rgba(26,47,35,.28)"/>
-              <text x="420" y="166" text-anchor="middle" font-family="Inter" font-size="12" font-weight="900" fill="#1A2F23">B12</text>
-            </svg>
+            <img src="saltypeanut.jpg" alt="Pack Performance PROTAMAX">
           </div>
           <div class="cardBody">
             <div class="badgeRow">
               <span class="badge gold">Best-value.</span>
               <span class="badge">Livraison offerte.</span>
             </div>
-            <h2 class="prodTitle">Pack Performance.</h2>
+            <h2 class="prodTitle">Pack Performance (12 barres).</h2>
             <div class="price">48,00 €</div>
-            <div class="meta">12 barres • bilan micronutritionnel inclus</div>
+            <div class="meta">Livraison OFFERTE + bilan micronutritionnel inclus. QR suivi personnalisé.</div>
             <div class="ctaRow">
-              <button class="btn primary" onclick="alert('Démo checkout : Pack Performance. (En prod : Shopify/Stripe)')">Commander</button>
+              <button class="btn primary" onclick="alert('Démo checkout : Pack Performance (à brancher Shopify/Stripe).')">Commander</button>
             </div>
           </div>
         </article>
       </div>
 
-      <!-- Proof + match (minimal) -->
       <section class="proof">
         <h2 style="font-family:var(--serif); font-size: 38px; margin:0;">Preuves.</h2>
         <p class="intro" style="margin-top:10px;">
-          Développé avec des experts en nutrition médicale pour cibler des carences fréquentes en <strong>Fer</strong> et <strong>B12</strong>.
+          Développé avec des experts en nutrition médicale pour aider à combler des carences fréquentes en
+          <strong>Fer</strong> et <strong>B12</strong>.
         </p>
 
         <div class="logos">
@@ -681,12 +627,12 @@
           <div class="logoCard">Reformation Pilates</div>
         </div>
 
-        <div class="twoCol" style="margin-top:16px;">
+        <div class="twoCol">
           <div class="box">
             <h3 style="margin:0 0 8px; font-family:var(--serif);">QR Code.</h3>
             <p style="margin:0; color: rgba(26,47,35,.72); line-height:1.65;">
-              Chaque barre contient un QR code pour accéder à un programme de suivi personnalisé :
-              routine, recommandations, suivi 30 jours.
+              Chaque barre contient un QR code → programme de suivi personnalisé : routine, recommandations,
+              tableau micronutritionnel, suivi 30 jours.
             </p>
           </div>
           <div class="tiktok">
@@ -704,7 +650,7 @@
             <thead>
               <tr>
                 <th>Critère</th>
-                <th>PROTAMAX</th>
+                <th>PROTAMAX (100g)</th>
                 <th>Barre classique</th>
               </tr>
             </thead>
@@ -727,11 +673,11 @@
               <tr>
                 <td><strong>Additifs</strong></td>
                 <td class="good">Zéro</td>
-                <td class="bad"><span class="strike">Sucralose</span>, maltitol…</td>
+                <td class="bad"><span class="strike">Sucralose</span>, maltitol, gélatine…</td>
               </tr>
               <tr>
                 <td><strong>Digestion</strong></td>
-                <td class="good">Stable</td>
+                <td class="good">Fibres élevées</td>
                 <td class="bad">Ballonnements</td>
               </tr>
             </tbody>
@@ -742,6 +688,7 @@
 
     <footer>
       © <span id="year"></span> PROTAMAX — Masstige • minimalisme radical • efficacité durable.
+      <br>Note : valeurs micronutritionnelles à confirmer par analyses & étiquetage UE.
     </footer>
   </main>
 
@@ -770,52 +717,6 @@
       }
     }));
 
-    // Info slider: Avantages / Ingrédients / Utilisation
-    const infoTabs = [...document.querySelectorAll(".infoTab")];
-    const stageTitle = document.getElementById("stageTitle");
-    const stageText  = document.getElementById("stageText");
-    const stageArt   = document.getElementById("stageArt");
-
-    const ART = {
-      a: `<g fill="none" stroke="rgba(26,47,35,.9)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M280 20l90 40v55c0 55-35 85-90 100-55-15-90-45-90-100V60l90-40Z"/>
-            <path d="M235 110l30 30 60-70"/>
-          </g>`,
-      b: `<g fill="none" stroke="rgba(26,47,35,.9)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M280 30c-40 22-62 52-62 82 0 42 36 78 62 90 26-12 62-48 62-90 0-30-22-60-62-82Z"/>
-            <path d="M255 120c20-12 36-32 42-56"/>
-          </g>`,
-      c: `<g fill="none" stroke="rgba(26,47,35,.9)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M140 170h280"/>
-            <path d="M190 150l40-70 50 55 50-95"/>
-            <path d="M205 78h0"/>
-          </g>`
-    };
-
-    const CONTENT = {
-      a: {
-        title: "Très riche en protéines.",
-        text: "+26g de protéines par barre (100g), énergie stable et satiété ~4h. Densité micronutritionnelle (Fer, B12, Magnésium) sans additifs."
-      },
-      b: {
-        title: "Clean label court.",
-        text: "Farine de Ténébrion Molitor (UE), isolat de pois, purée d’amande, sirop de tapioca. Une liste courte. Transparente."
-      },
-      c: {
-        title: "Utilisation simple.",
-        text: "Post-workout intense, déjeuner d’affaires nomade, bio-hacking de performance. Une barre = un repas portable."
-      }
-    };
-
-    function setInfo(key){
-      infoTabs.forEach(t => t.classList.toggle("active", t.dataset.info === key));
-      stageTitle.textContent = CONTENT[key].title;
-      stageText.textContent  = CONTENT[key].text;
-      stageArt.innerHTML = ART[key];
-    }
-    infoTabs.forEach(t => t.addEventListener("click", () => setInfo(t.dataset.info)));
-
-    // Helpers
     function jump(sel){
       const el = document.querySelector(sel);
       if(el) el.scrollIntoView({behavior:"smooth", block:"start"});
@@ -823,17 +724,69 @@
     window.jump = jump;
 
     function goPacks(which){
-      // switch to PACKS tab
       tabs.forEach(x => x.classList.remove("active"));
       document.querySelector('.tab[data-page="packs"]').classList.add("active");
       pageBars.style.display = "none";
       pagePacks.style.display = "";
       window.scrollTo({top:0, behavior:"smooth"});
       if(which === "performance"){
-        setTimeout(()=> alert("Pack Performance (démo). En prod : Shopify/Stripe."), 400);
+        setTimeout(()=> alert("Pack Performance (démo). En prod : Shopify/Stripe."), 350);
       }
     }
     window.goPacks = goPacks;
+
+    // Info slider content
+    const infoTabs = [...document.querySelectorAll(".infoTab")];
+    const stageTitle = document.getElementById("stageTitle");
+    const stageText  = document.getElementById("stageText");
+    const miniGrid   = document.getElementById("stageMiniGrid");
+
+    const CONTENT = {
+      a: {
+        title: "Densité micronutritionnelle.",
+        text: "Pourquoi PROTAMAX plutôt qu’une barre whey standard ? Parce que le Ténébrion + le pois apportent des minéraux naturellement. Et une satiété ~4h grâce aux fibres.",
+        minis: [
+          ["Fer ~5,5 mg", "≈39% AJR • “Anti-fatigue”"],
+          ["Magnésium ~120 mg", "≈32% AJR • récupération musculaire"],
+          ["Vit. B12 ~0,6 µg", "≈24% AJR • énergie naturelle"]
+        ]
+      },
+      b: {
+        title: "Master Mix (70%).",
+        text: "Base commune pour optimiser la production et garder une texture cookie dough premium : mix protéines (Ténébrion + pois), liants moelleux, crisps de pois pour le croquant.",
+        minis: [
+          ["Protéines", "Ténébrion (premium) + pois (structure/coût)"],
+          ["Liants", "Sirop de fibres (tapioca/maïs) + glycérine végétale"],
+          ["Texture", "Crisps de pois : crunch sans coût élevé"]
+        ]
+      },
+      c: {
+        title: "Utilisation.",
+        text: "Post-workout intense, déjeuner d’affaires nomade, bio-hacking de performance. Une barre = un repas portable, stable.",
+        minis: [
+          ["Post-workout", "récupération + énergie stable"],
+          ["Nomade", "réunion, train, avion — propre"],
+          ["Routine", "QR code → suivi personnalisé"]
+        ]
+      }
+    };
+
+    function setInfo(key){
+      infoTabs.forEach(t => t.classList.toggle("active", t.dataset.info === key));
+      stageTitle.textContent = CONTENT[key].title;
+      stageText.textContent  = CONTENT[key].text;
+
+      miniGrid.innerHTML = CONTENT[key].minis.map(([t, d]) => `
+        <div class="miniCard">
+          <div style="font-weight:900; color: rgba(26,47,35,.92);">${t}</div>
+          <div style="margin-top:6px; color: rgba(26,47,35,.70); line-height:1.5;">${d}</div>
+        </div>
+      `).join("");
+    }
+
+    infoTabs.forEach(t => t.addEventListener("click", () => setInfo(t.dataset.info)));
+    setInfo("a"); // default
+    window.setInfo = setInfo;
   </script>
 </body>
 </html>
