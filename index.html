@@ -521,10 +521,8 @@ footer {
 
 /* ── SCROLL REVEAL */
 .reveal {
-  opacity:0; transform:translateY(24px);
-  transition: opacity .65s ease, transform .65s ease;
+  opacity:1; transform:translateY(0);
 }
-.reveal.visible { opacity:1; transform:translateY(0); }
 
 /* ── MOBILE */
 @media(max-width:768px){
@@ -542,39 +540,15 @@ footer {
 
 /* ── ANIMATIONS ────────────────────────────────── */
 
-/* Cursor personnalisé */
-* { cursor: none !important; }
-.custom-cursor {
-  position: fixed; width:12px; height:12px;
-  background: var(--gold); border-radius:50%;
-  pointer-events:none; z-index:9999;
-  transform: translate(-50%,-50%);
-  transition: width .2s, height .2s, background .2s;
-  mix-blend-mode: multiply;
-}
-.custom-cursor.hover { width:32px; height:32px; background:var(--amber); }
-.cursor-trail {
-  position:fixed; width:6px; height:6px;
-  border:1px solid var(--gold); border-radius:50%;
-  pointer-events:none; z-index:9998;
-  transform:translate(-50%,-50%);
-  transition: all .12s ease;
-  opacity:.5;
-}
+/* cursor default */
 
-/* Reveal staggeré plus dynamique */
+/* Reveal staggeré */
 .reveal {
   opacity:0;
-  transform: translateY(32px);
-  transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1);
+  transform: translateY(20px);
+  transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1);
 }
 .reveal.visible { opacity:1; transform:translateY(0); }
-.reveal.from-left { transform: translateX(-40px); }
-.reveal.from-left.visible { transform: translateX(0); }
-.reveal.from-right { transform: translateX(40px); }
-.reveal.from-right.visible { transform: translateX(0); }
-.reveal.scale-in { transform: scale(.92); }
-.reveal.scale-in.visible { transform: scale(1); }
 
 /* Counter animation */
 .stat-num[data-count] { transition: none; }
@@ -1267,24 +1241,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// ── Cursor personnalisé
-const cursor = document.createElement('div');
-cursor.className = 'custom-cursor';
-const trail = document.createElement('div');
-trail.className = 'cursor-trail';
-document.body.appendChild(cursor);
-document.body.appendChild(trail);
 
-let mx=0, my=0, tx=0, ty=0;
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  cursor.style.left = mx+'px'; cursor.style.top = my+'px';
-  setTimeout(()=>{ trail.style.left=mx+'px'; trail.style.top=my+'px'; }, 80);
-});
-document.querySelectorAll('a,button,.product-card,.science-card,.pack-card').forEach(el => {
-  el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-  el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-});
 
 // ── Counter animation pour les stat-num
 function animateCounter(el) {
@@ -1327,16 +1284,23 @@ if(heroImg) {
   });
 }
 
-// ── Stagger reveal avec délai séquentiel
+// ── Reveal au scroll
 const revealObserver = new IntersectionObserver(entries => {
-  entries.forEach((e, i) => {
+  entries.forEach(e => {
     if(e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('visible'), i * 60);
+      e.target.classList.add('visible');
       revealObserver.unobserve(e.target);
     }
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+}, { threshold: 0.05, rootMargin: '0px 0px 0px 0px' });
+document.querySelectorAll('.reveal').forEach(el => {
+  const rect = el.getBoundingClientRect();
+  if(rect.top < window.innerHeight) {
+    el.classList.add('visible'); // déjà visible au chargement
+  } else {
+    revealObserver.observe(el);
+  }
+});
 
 // ── Nav scroll effect
 const nav = document.querySelector('nav');
